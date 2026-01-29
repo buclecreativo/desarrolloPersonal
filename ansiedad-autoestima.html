@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serenidad Andina: Ansiedad y Autoestima en la Adolescencia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2A6E78;
+            --secondary: #8AC6D0;
+            --accent: #FF9A8B;
+            --light: #F5F9FA;
+            --dark: #1A3A40;
+            --success: #4CAF50;
+            --warning: #FF9800;
+            --danger: #F44336;
+            --transition: all 0.3s ease;
+            --border-radius: 12px;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #1A3A40 100%);
+            color: white;
+            padding: 1.5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 2.5rem;
+            color: var(--secondary);
+        }
+
+        .logo h1 {
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 58, 64, 0.85), rgba(26, 58, 64, 0.9)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .hero-content h2 {
+            color: white;
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: #ff7a6a;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Main Content Sections */
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        /* Introduction */
+        .intro-content {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .intro-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .highlight {
+            background-color: rgba(138, 198, 208, 0.2);
+            border-left: 4px solid var(--secondary);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        /* Computational Thinking */
+        .ct-pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .pillar {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--primary);
+        }
+
+        .pillar:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .pillar i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Topics Accordion */
+        .topics-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .accordion {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        .accordion-header {
+            padding: 1.5rem;
+            background-color: #f8fbfc;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 4px solid var(--primary);
+            transition: var(--transition);
+        }
+
+        .accordion-header:hover {
+            background-color: #eef5f7;
+        }
+
+        .accordion-header h3 {
+            margin-bottom: 0;
+            font-size: 1.3rem;
+        }
+
+        .accordion-icon {
+            transition: var(--transition);
+        }
+
+        .accordion.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .accordion.active .accordion-content {
+            padding: 1.5rem;
+            max-height: 1000px;
+        }
+
+        .example-box {
+            background-color: #f9f9f9;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--accent);
+        }
+
+        .example-box h4 {
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Strategies */
+        .strategies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .strategy-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .strategy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .strategy-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(42, 110, 120, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .strategy-icon i {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        /* Conclusion */
+        .conclusion-content {
+            background: linear-gradient(135deg, var(--primary) 0%, #1A3A40 100%);
+            color: white;
+            border-radius: var(--border-radius);
+            padding: 3rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .conclusion-content h2,
+        .conclusion-content p {
+            color: white;
+        }
+
+        .conclusion-content p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cultural-values {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .value {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 200px;
+        }
+
+        .value i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: var(--secondary);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+
+            .ct-pillars,
+            .strategies-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-content,
+            .conclusion-content {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Interactive Elements */
+        .reflection-question {
+            background-color: #f0f7ff;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #4dabf7;
+        }
+
+        .action-step {
+            background-color: #e7f7ef;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--success);
+        }
+
+        .quote {
+            font-style: italic;
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin: 2rem 0;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            background-color: rgba(138, 198, 208, 0.1);
+        }
+
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 2rem 0;
+        }
+
+        .progress-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ddd;
+            transition: var(--transition);
+        }
+
+        .progress-dot.active {
+            background-color: var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-mountain"></i>
+                <h1>Serenidad Andina</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#introduccion">Introducción</a></li>
+                    <li><a href="#analisis">Análisis</a></li>
+                    <li><a href="#temas">Temas</a></li>
+                    <li><a href="#estrategias">Estrategias</a></li>
+                    <li><a href="#conclusion">Conclusión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h2>Ansiedad y Autoestima en la Adolescencia Ecuatoriana</h2>
+            <p>Un espacio seguro para entender tus emociones, fortalecer tu autoestima y construir tu propósito
+                personal, integrando la sabiduría estoica, la resiliencia andina y el valor de la comunidad.</p>
+            <a href="#introduccion" class="cta-button">Comencemos el viaje</a>
+        </div>
+    </section>
+
+    <!-- Introducción -->
+    <section id="introduccion" class="intro">
+        <div class="container">
+            <h2 class="section-title">Introducción: No estás solo/a en este camino</h2>
+            <div class="intro-content">
+                <p>Querido estudiante, si estás aquí es porque probablemente te sientes abrumado/a por la presión
+                    académica, las expectativas familiares, la comparación en redes sociales o la incertidumbre sobre tu
+                    futuro. Tal vez sientes que tu corazón late más rápido antes de un examen, que tu mente no para de
+                    pensar en "qué dirán" o que no te sientes a la altura de tus compañeros.</p>
+
+                <div class="highlight">
+                    <p><strong>Recuerda esto:</strong> Sentir ansiedad y dudar de tu valor no es señal de debilidad,
+                        sino de humanidad. En nuestro Ecuador diverso, donde conviven la modernidad y la tradición, los
+                        jóvenes enfrentan desafíos únicos. Pero también contamos con una riqueza cultural que nos
+                        fortalece: la resiliencia andina, el sentido de comunidad y el valor de la minga, donde todos
+                        nos apoyamos.</p>
+                </div>
+
+                <p>Este taller no pretende darte soluciones mágicas, sino herramientas prácticas para que puedas
+                    reconocer tus emociones, fortalecer tu autoestima y construir un propósito personal auténtico. No
+                    importa si estudias en un colegio fiscal, fiscomisional o particular; tus emociones son válidas y
+                    merecen atención.</p>
+
+                <div class="quote">
+                    "La verdadera fortaleza no está en no caer, sino en levantarse cada vez que caemos, como nuestras
+                    montañas andinas que resisten con dignidad."
+                </div>
+
+                <p>Vamos a emprender este viaje de autodescubrimiento juntos, con paciencia, compasión y la certeza de
+                    que cada uno de ustedes tiene un ritmo, un talento y un camino propio que merece ser honrado.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Análisis con Pensamiento Computacional -->
+    <section id="analisis" class="analysis" style="background-color: #f8fbfc;">
+        <div class="container">
+            <h2 class="section-title">Análisis del problema con pensamiento computacional</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Vamos a desglosar la ansiedad y la
+                baja autoestima usando los 4 pilares del pensamiento computacional, aplicados a situaciones cotidianas
+                del estudiante ecuatoriano.</p>
+
+            <div class="ct-pillars">
+                <div class="pillar">
+                    <i class="fas fa-code-branch"></i>
+                    <h3>1. Descomposición</h3>
+                    <p>Dividamos la ansiedad en situaciones diarias: los nervios antes de una exposición en clase, la
+                        presión por el Ser Bachiller, la comparación en Instagram, la expectativa familiar sobre "qué
+                        vas a estudiar".</p>
+                </div>
+
+                <div class="pillar">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>2. Reconocimiento de patrones</h3>
+                    <p>Identifiquemos emociones repetitivas: ¿Siempre te duele el estómago los domingos por la noche?
+                        ¿Te comparas con otros al ver sus historias? ¿Evitas hablar en clase por miedo a equivocarte?
+                    </p>
+                </div>
+
+                <div class="pillar">
+                    <i class="fas fa-filter"></i>
+                    <h3>3. Abstracción</h3>
+                    <p>Enfócate en lo esencial: Tu valor no depende de una nota, un like o la aprobación de otros. Deja
+                        de lado comparaciones innecesarias y concéntrate en tu propio crecimiento.</p>
+                </div>
+
+                <div class="pillar">
+                    <i class="fas fa-tasks"></i>
+                    <h3>4. Diseño de soluciones</h3>
+                    <p>Crea estrategias prácticas: Respiración consciente antes de un examen, límites en redes sociales,
+                        organización de tareas, diálogo con tu familia sobre expectativas realistas.</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h4><i class="fas fa-graduation-cap"></i> Ejemplo contextualizado: La presión por el examen Ser
+                    Bachiller</h4>
+                <p><strong>Descomposición:</strong> El miedo al examen se puede dividir en: miedo a decepcionar a la
+                    familia, miedo a no entrar a la universidad, miedo al qué dirán si sacas baja nota.</p>
+                <p><strong>Reconocimiento de patrones:</strong> ¿Siempre te pones nervioso/a semanas antes? ¿Comparas
+                    tus simulacros con los de tus compañeros?</p>
+                <p><strong>Abstracción:</strong> Este examen es importante, pero no define tu inteligencia ni tu futuro.
+                    Muchas personas exitosas no sacaron puntajes perfectos.</p>
+                <p><strong>Diseño de soluciones:</strong> Plan de estudio realista, técnicas de relajación, recordar que
+                    hay múltiples caminos hacia tu carrera soñada.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desarrollo de Temas -->
+    <section id="temas" class="topics">
+        <div class="container">
+            <h2 class="section-title">Desarrollo de los temas</h2>
+            <p style="text-align: center; margin-bottom: 3rem;">Explora cada subtema haciendo clic en los siguientes
+                acordeones. Encontrarás explicaciones claras, ejemplos cotidianos y preguntas para reflexionar.</p>
+
+            <div class="topics-container">
+                <!-- Acordeón 1 -->
+                <div class="accordion active">
+                    <div class="accordion-header">
+                        <h3>¿Qué es la ansiedad y cómo se manifiesta en adolescentes?</h3>
+                        <span class="accordion-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>La ansiedad es una respuesta natural del cuerpo ante situaciones percibidas como amenazantes.
+                            En la adolescencia, se manifiesta de formas particulares:</p>
+
+                        <div class="example-box">
+                            <h4><i class="fas fa-users"></i> Ejemplo: Ansiedad social al hablar en clase</h4>
+                            <p>Imagina que el profesor te pide que expongas sobre la independencia de Guayaquil. De
+                                repente, sientes que tu corazón late más rápido, las palmas de tus manos sudan y tu
+                                mente se queda en blanco. Esto es ansiedad social, muy común entre adolescentes
+                                ecuatorianos.</p>
+                        </div>
+
+                        <div class="reflection-question">
+                            <h4><i class="fas fa-brain"></i> Pregunta para reflexionar</h4>
+                            <p>¿En qué situaciones escolares o sociales sientes mayor ansiedad? ¿Cómo se manifiesta en
+                                tu cuerpo (palpitaciones, sudoración, tensión muscular)?</p>
+                        </div>
+
+                        <div class="action-step">
+                            <h4><i class="fas fa-hands-helping"></i> Acción concreta para hoy</h4>
+                            <p>Identifica una situación que te genera ansiedad esta semana. Antes de enfrentarla, toma 3
+                                respiraciones profundas, recordando que es normal sentir nervios y que cada experiencia
+                                es una oportunidad para crecer.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Acordeón 2 -->
+                <div class="accordion">
+                    <div class="accordion-header">
+                        <h3>Autoestima: Cómo se forma y factores que la afectan</h3>
+                        <span class="accordion-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>La autoestima es la valoración que tenemos de nosotros mismos. Durante la adolescencia, se
+                            forma principalmente a través de:</p>
+                        <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem;">
+                            <li>Las experiencias en la familia (comentarios de padres, hermanos)</li>
+                            <li>Las relaciones en el colegio (compañeros, profesores)</li>
+                            <li>El rendimiento académico (notas, reconocimientos)</li>
+                            <li>La comparación social (redes sociales, grupos de amigos)</li>
+                        </ul>
+
+                        <div class="example-box">
+                            <h4><i class="fas fa-mobile-alt"></i> Ejemplo: Influencia de las redes sociales</h4>
+                            <p>Después de pasar una hora en TikTok o Instagram, te sientes insuficiente porque otros
+                                parecen tener una vida más interesante, un cuerpo más "perfecto" o mejores resultados
+                                académicos. Esta comparación constante erosiona tu autoestima.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Acordeón 3 -->
+                <div class="accordion">
+                    <div class="accordion-header">
+                        <h3>Relación entre ansiedad y baja autoestima</h3>
+                        <span class="accordion-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>La ansiedad y la baja autoestima están íntimamente relacionadas, creando un círculo vicioso:
+                        </p>
+
+                        <div style="display: flex; justify-content: center; margin: 1.5rem 0;">
+                            <div
+                                style="background-color: white; padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--shadow); max-width: 500px; text-align: center;">
+                                <p style="color: var(--primary); font-weight: 600; margin-bottom: 0.5rem;">Baja
+                                    autoestima</p>
+                                <i class="fas fa-arrow-down" style="color: var(--accent); margin: 0.5rem 0;"></i>
+                                <p style="color: var(--primary); font-weight: 600; margin-bottom: 0.5rem;">Mayor
+                                    vulnerabilidad a la ansiedad</p>
+                                <i class="fas fa-arrow-down" style="color: var(--accent); margin: 0.5rem 0;"></i>
+                                <p style="color: var(--primary); font-weight: 600; margin-bottom: 0.5rem;">Evitación de
+                                    situaciones desafiantes</p>
+                                <i class="fas fa-arrow-down" style="color: var(--accent); margin: 0.5rem 0;"></i>
+                                <p style="color: var(--primary); font-weight: 600;">Refuerzo de la baja autoestima</p>
+                            </div>
+                        </div>
+
+                        <p>Romper este ciclo requiere trabajo consciente, pero es completamente posible con las
+                            herramientas adecuadas.</p>
+                    </div>
+                </div>
+
+                <!-- Más acordeones se agregarían aquí para los otros temas -->
+
+                <div class="progress-indicator">
+                    <div class="progress-dot active"></div>
+                    <div class="progress-dot"></div>
+                    <div class="progress-dot"></div>
+                    <div class="progress-dot"></div>
+                    <div class="progress-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estrategias Prácticas -->
+    <section id="estrategias" class="strategies" style="background-color: #f0f7f9;">
+        <div class="container">
+            <h2 class="section-title">Estrategias prácticas para manejar la ansiedad y fortalecer la autoestima</h2>
+
+            <div class="strategies-grid">
+                <div class="strategy-card">
+                    <div class="strategy-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3>Respiración consciente (Pranayama andino)</h3>
+                    <p>Inspira contando hasta 4, mantén el aire contando hasta 4, exhala contando hasta 6. Practica esta
+                        técnica antes de un examen o cuando sientas ansiedad en el transporte público. Visualiza el aire
+                        limpio de nuestros páramos.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <div class="strategy-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Organización del tiempo escolar</h3>
+                    <p>Crea un horario realista que incluya estudio, descanso y ocio. Prioriza tareas usando el método
+                        "minga": divide proyectos grandes en pequeñas tareas manejables, como se hace en el trabajo
+                        comunitario andino.</p>
+                </div>
+
+                <div class="strategy-card">
+                    <div class="strategy-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Diálogo familiar sobre expectativas</h3>
+                    <p>Conversa con tu familia sobre la presión que sientes. Puedes decir: "Mamá, papá, entiendo que
+                        quieren lo mejor para mí. Me ayudaría si pudiéramos hablar sobre expectativas realistas para mi
+                        rendimiento académico".</p>
+                </div>
+
+                <div class="strategy-card">
+                    <div class="strategy-icon">
+                        <i class="fas fa-hands"></i>
+                    </div>
+                    <h3>Límites saludables en redes sociales</h3>
+                    <p>Establece horarios específicos para revisar redes (ej: 30 minutos al día). Recuerda que lo que
+                        ves es una curada selección de la vida de otros, no la realidad completa. Sigue cuentas que
+                        inspiren, no que generen comparación.</p>
+                </div>
+            </div>
+
+            <div class="reflection-question" style="max-width: 800px; margin: 3rem auto;">
+                <h4><i class="fas fa-question-circle"></i> ¿Cuándo y cómo pedir ayuda profesional?</h4>
+                <p>Si la ansiedad interfiere con tu vida diaria (no puedes dormir, evitas ir al colegio, tienes
+                    pensamientos constantes de incapacidad), es momento de buscar ayuda. En Ecuador puedes acudir a:</p>
+                <ul style="padding-left: 1.5rem; margin-top: 1rem;">
+                    <li><strong>Orientador estudiantil</strong> en tu colegio</li>
+                    <li><strong>DECE</strong> (Departamento de Consejería Estudiantil)</li>
+                    <li><strong>Psicólogo escolar</strong> o comunitario</li>
+                    <li><strong>Centros de salud públicos</strong> con atención psicológica</li>
+                </ul>
+                <p style="margin-top: 1rem;">Pedir ayuda es un acto de valentía y autocuidado, no de debilidad.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusión -->
+    <section id="conclusion" class="conclusion">
+        <div class="container">
+            <div class="conclusion-content">
+                <h2>Conclusión: Tu camino único</h2>
+                <p>Querido estudiante, a lo largo de este taller hemos explorado juntos las complejidades de la ansiedad
+                    y la autoestima en la adolescencia. Esperamos que ahora tengas herramientas más claras para
+                    reconocer tus emociones, comprender sus orígenes y desarrollar estrategias prácticas para fortalecer
+                    tu bienestar emocional.</p>
+
+                <p>Recuerda que el crecimiento personal no es una carrera, sino un camino que se recorre con paciencia y
+                    compasión hacia uno mismo. Así como nuestras montañas andinas se forman lentamente a través del
+                    tiempo, tu autoestima y resiliencia se construyen día a día, con pequeños actos de autocuidado y
+                    valentía.</p>
+
+                <div class="cultural-values">
+                    <div class="value">
+                        <i class="fas fa-mountain"></i>
+                        <h4>Resiliencia Andina</h4>
+                        <p style="text-align: center; font-size: 0.9rem;">La capacidad de adaptarnos y crecer ante las
+                            adversidades, como nuestras tierras altas que florecen contra toda expectativa.</p>
+                    </div>
+
+                    <div class="value">
+                        <i class="fas fa-hands-helping"></i>
+                        <h4>Sentido de Comunidad</h4>
+                        <p style="text-align: center; font-size: 0.9rem;">Nadie crece solo. Tu bienestar está
+                            entrelazado con el de tu familia, amigos, colegio y comunidad.</p>
+                    </div>
+
+                    <div class="value">
+                        <i class="fas fa-seedling"></i>
+                        <h4>Crecimiento Personal</h4>
+                        <p style="text-align: center; font-size: 0.9rem;">Cada experiencia, incluso las difíciles, son
+                            semillas para tu desarrollo. Tu valor no depende de logros externos.</p>
+                    </div>
+                </div>
+
+                <p style="margin-top: 2rem; font-weight: 600;">Tienes un ritmo, un talento y un camino propio. Honra tu
+                    proceso, pide ayuda cuando lo necesites y recuerda que, así como el cóndor vuela alto sobre los
+                    Andes, tú también tienes la capacidad de elevarte por encima de los desafíos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Serenidad Andina</h3>
+                    <p>Un espacio educativo para el desarrollo emocional de adolescentes ecuatorianos, integrando
+                        sabiduría estoica, resiliencia andina y sentido de comunidad.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Recursos de Ayuda en Ecuador</h3>
+                    <ul>
+                        <li><a href="#">Línea de crisis psicológica: 171</a></li>
+                        <li><a href="#">Centros de salud mental públicos</a></li>
+                        <li><a href="#">DECE - Ministerio de Educación</a></li>
+                        <li><a href="#">Fundación Telefónica Movistar Ecuador</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Seguir aprendiendo</h3>
+                    <ul>
+                        <li><a href="#">Talleres virtuales gratuitos</a></li>
+                        <li><a href="#">Guías descargables</a></li>
+                        <li><a href="#">Foro de apoyo entre pares</a></li>
+                        <li><a href="#">Blog sobre desarrollo adolescente</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>© 2026 Serenidad Andina - Taller educativo para adolescentes ecuatorianos. Integrando estoicismo,
+                    resiliencia andina y sentido de comunidad.</p>
+                <p style="margin-top: 0.5rem;">Este contenido es educativo y no sustituye la atención profesional
+                    psicológica.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Acordeón interactivo
+        document.addEventListener('DOMContentLoaded', function () {
+            const accordions = document.querySelectorAll('.accordion');
+
+            accordions.forEach(accordion => {
+                const header = accordion.querySelector('.accordion-header');
+
+                header.addEventListener('click', () => {
+                    // Cerrar todos los acordeones primero
+                    accordions.forEach(item => {
+                        if (item !== accordion) {
+                            item.classList.remove('active');
+                        }
+                    });
+
+                    // Abrir/cerrar el acordeón clickeado
+                    accordion.classList.toggle('active');
+
+                    // Actualizar indicadores de progreso
+                    updateProgressIndicators();
+                });
+            });
+
+            // Función para actualizar los puntos de progreso
+            function updateProgressIndicators() {
+                const activeIndex = Array.from(accordions).findIndex(acc => acc.classList.contains('active'));
+                const dots = document.querySelectorAll('.progress-dot');
+
+                dots.forEach((dot, index) => {
+                    if (index === activeIndex) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+
+            // Inicializar el primer acordeón como abierto y actualizar indicadores
+            updateProgressIndicators();
+
+            // Navegación suave
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Botón CTA
+            document.querySelector('.cta-button').addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetSection = document.querySelector('#introduccion');
+
+                window.scrollTo({
+                    top: targetSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

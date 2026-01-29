@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómo dejar de procrastinar (paso a paso y sin estrés)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4A6FA5;
+            --primary-light: #6B8CC0;
+            --secondary: #16BAC5;
+            --accent: #FF6B6B;
+            --success: #5CB85C;
+            --light: #F8F9FA;
+            --dark: #343A40;
+            --gray: #6C757D;
+            --gray-light: #E9ECEF;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f5f7ff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2rem;
+            border-left: 5px solid var(--secondary);
+            padding-left: 15px;
+            margin-top: 2rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        button {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            border-radius: 50px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            padding: 14px 32px;
+            font-size: 1.1rem;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: white;
+            padding: 10px 24px;
+            font-size: 1rem;
+        }
+
+        .btn-secondary:hover {
+            background-color: #13a4ad;
+            transform: translateY(-2px);
+        }
+
+        .btn-small {
+            background-color: var(--gray-light);
+            color: var(--dark);
+            padding: 8px 16px;
+            font-size: 0.9rem;
+        }
+
+        .btn-small:hover {
+            background-color: var(--gray);
+            color: white;
+        }
+
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        /* Pantalla de bienvenida */
+        #welcome {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #eef2ff 0%, #f9f7ff 100%);
+            padding: 40px 20px;
+        }
+
+        .welcome-content {
+            max-width: 800px;
+            background-color: white;
+            border-radius: 20px;
+            padding: 50px 40px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .welcome-content::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .logo {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+
+        .task-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid var(--gray-light);
+            border-radius: 10px;
+            font-size: 1rem;
+            margin-bottom: 30px;
+            transition: var(--transition);
+        }
+
+        .task-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        /* Introducción emocional */
+        .emotion-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .emotion-option {
+            padding: 20px;
+            border: 2px solid var(--gray-light);
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .emotion-option:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .emotion-option.selected {
+            border-color: var(--secondary);
+            background-color: rgba(22, 186, 197, 0.1);
+        }
+
+        .emotion-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        /* Módulos interactivos */
+        .modules-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .module-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .module-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .module-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        .module-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .challenge {
+            background-color: rgba(106, 176, 76, 0.1);
+            border-left: 4px solid var(--success);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .challenge h4 {
+            color: var(--success);
+            margin-bottom: 10px;
+        }
+
+        .timer {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .timer-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .drag-drop-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .drag-item {
+            padding: 15px;
+            background-color: white;
+            border: 2px dashed var(--gray-light);
+            border-radius: 10px;
+            cursor: move;
+            transition: var(--transition);
+        }
+
+        .drag-item.dragging {
+            opacity: 0.5;
+        }
+
+        .drop-zone {
+            padding: 20px;
+            background-color: rgba(22, 186, 197, 0.1);
+            border: 2px dashed var(--secondary);
+            border-radius: 10px;
+            min-height: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .checkbox-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checkbox-item input {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Sistema de hábitos */
+        .habits-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .habit-card {
+            flex: 1;
+            min-width: 200px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .habit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .habit-card.selected {
+            border: 2px solid var(--secondary);
+            background-color: rgba(22, 186, 197, 0.05);
+        }
+
+        /* Recompensas y seguimiento */
+        .progress-container {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin-top: 20px;
+        }
+
+        .progress-bar {
+            height: 20px;
+            background-color: var(--gray-light);
+            border-radius: 10px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 10px;
+            width: 0%;
+            transition: width 1s ease;
+        }
+
+        .badges-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--gray-light);
+            color: var(--gray);
+            font-size: 2rem;
+            transition: var(--transition);
+        }
+
+        .badge.unlocked {
+            background-color: var(--secondary);
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(22, 186, 197, 0.3);
+        }
+
+        /* Navegación */
+        .nav-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .nav-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .nav-btn.active {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* Mensajes */
+        .message {
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            display: none;
+        }
+
+        .message.success {
+            background-color: rgba(92, 184, 92, 0.1);
+            border-left: 4px solid var(--success);
+            display: block;
+        }
+
+        .message.info {
+            background-color: rgba(22, 186, 197, 0.1);
+            border-left: 4px solid var(--secondary);
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            .modules-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .emotion-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .habits-container {
+                flex-direction: column;
+            }
+            
+            .nav-container {
+                position: static;
+                flex-direction: row;
+                justify-content: center;
+                margin-bottom: 30px;
+            }
+            
+            section {
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navegación entre secciones -->
+    <div class="nav-container">
+        <div class="nav-btn active" data-target="welcome">1</div>
+        <div class="nav-btn" data-target="emotional-intro">2</div>
+        <div class="nav-btn" data-target="analysis">3</div>
+        <div class="nav-btn" data-target="modules">4</div>
+        <div class="nav-btn" data-target="habits">5</div>
+        <div class="nav-btn" data-target="rewards">6</div>
+        <div class="nav-btn" data-target="setback">7</div>
+        <div class="nav-btn" data-target="closing">8</div>
+    </div>
+
+    <!-- Pantalla de bienvenida -->
+    <section id="welcome">
+        <div class="container">
+            <div class="welcome-content">
+                <div class="logo">
+                    <i class="fas fa-play-circle"></i>
+                </div>
+                <h1>Cómo dejar de procrastinar</h1>
+                <p class="tagline">(paso a paso y sin estrés)</p>
+                <p>Un taller práctico y vivencial diseñado para estudiantes como tú. Aquí no solo leerás consejos, sino que participarás activamente, tomarás decisiones y ejecutarás pequeños retos reales.</p>
+                
+                <div class="challenge">
+                    <h4>Reflexión inicial</h4>
+                    <p>Para personalizar tu experiencia, responde:</p>
+                </div>
+                
+                <p><strong>¿Qué es lo que más sueles postergar?</strong></p>
+                <input type="text" class="task-input" id="procrastinatedTask" placeholder="Ej: Estudiar para el examen de matemáticas, hacer la tarea de historia...">
+                
+                <button class="btn-primary" id="startBtn">Empezar mi proceso</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introducción emocional guiada -->
+    <section id="emotional-intro" style="display: none;">
+        <div class="container">
+            <h2>Entendiendo la procrastinación</h2>
+            <p>La procrastinación no es un defecto de personalidad, sino un <strong>comportamiento emocional</strong>. Entender cómo te sientes es el primer paso para cambiar.</p>
+            
+            <div class="message info">
+                <p><strong>Recuerda esto:</strong> Procrastinar no significa que seas flojo. Generalmente es una respuesta a emociones como el miedo al fracaso, la ansiedad o la falta de claridad.</p>
+            </div>
+            
+            <p><strong>Selecciona cómo te sientes cuando procrastinas:</strong></p>
+            
+            <div class="emotion-options">
+                <div class="emotion-option" data-emotion="ansiedad">
+                    <div class="emotion-icon"><i class="fas fa-heartbeat"></i></div>
+                    <p>Ansiedad</p>
+                </div>
+                <div class="emotion-option" data-emotion="cansancio">
+                    <div class="emotion-icon"><i class="fas fa-tired"></i></div>
+                    <p>Cansancio</p>
+                </div>
+                <div class="emotion-option" data-emotion="miedo">
+                    <div class="emotion-icon"><i class="fas fa-surprise"></i></div>
+                    <p>Miedo</p>
+                </div>
+                <div class="emotion-option" data-emotion="culpa">
+                    <div class="emotion-icon"><i class="fas fa-frown"></i></div>
+                    <p>Culpa</p>
+                </div>
+                <div class="emotion-option" data-emotion="confusion">
+                    <div class="emotion-icon"><i class="fas fa-question-circle"></i></div>
+                    <p>Confusión</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="btn-secondary" id="continueFromEmotions">Continuar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Análisis del problema con pensamiento computacional -->
+    <section id="analysis" style="display: none;">
+        <div class="container">
+            <h2>Análisis con pensamiento computacional</h2>
+            <p>Vamos a abordar tu procrastinación como un problema que podemos descomponer y resolver sistemáticamente.</p>
+            
+            <div class="modules-container">
+                <div class="module-card">
+                    <div class="module-icon">🧩</div>
+                    <h3 class="module-title">Descomposición</h3>
+                    <p>Divide una tarea grande en partes pequeñas y manejables.</p>
+                    <div class="challenge">
+                        <h4>Tu reto:</h4>
+                        <p>Escribe la tarea que postergas y divídela en 3 pasos pequeños.</p>
+                        <input type="text" class="task-input" id="taskStep1" placeholder="Paso 1" style="margin-bottom: 10px;">
+                        <input type="text" class="task-input" id="taskStep2" placeholder="Paso 2" style="margin-bottom: 10px;">
+                        <input type="text" class="task-input" id="taskStep3" placeholder="Paso 3" style="margin-bottom: 10px;">
+                    </div>
+                </div>
+                
+                <div class="module-card">
+                    <div class="module-icon">🔁</div>
+                    <h3 class="module-title">Reconocimiento de patrones</h3>
+                    <p>Identifica cuándo y por qué sueles procrastinar.</p>
+                    <div class="challenge">
+                        <h4>Tu reto:</h4>
+                        <p>Marca las situaciones en las que sueles postergar:</p>
+                        <div class="checkbox-list">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="pattern1" value="tarde-noche">
+                                <label for="pattern1">En la tarde/noche</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="pattern2" value="cansado">
+                                <label for="pattern2">Cuando estoy cansado</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="pattern3" value="sol">
+                                <label for="pattern3">Cuando estoy solo</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="pattern4" value="telefono">
+                                <label for="pattern4">Cuando tengo el teléfono cerca</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="module-card">
+                    <div class="module-icon">🎯</div>
+                    <h3 class="module-title">Abstracción</h3>
+                    <p>Identifica la causa principal detrás de tu procrastinación.</p>
+                    <div class="challenge">
+                        <h4>Tu reto:</h4>
+                        <p>Selecciona la causa que más se acerca a tu situación:</p>
+                        <select id="mainCause" class="task-input" style="margin-bottom: 0;">
+                            <option value="">Selecciona una opción</option>
+                            <option value="miedo">Miedo a no hacerlo perfecto</option>
+                            <option value="aburrimiento">La tarea me parece aburrida</option>
+                            <option value="saturacion">Me siento saturado o abrumado</option>
+                            <option value="claridad">No sé por dónde empezar</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="module-card">
+                    <div class="module-icon">🧠</div>
+                    <h3 class="module-title">Algoritmo / Plan de acción</h3>
+                    <p>Crea un plan simple para empezar hoy mismo.</p>
+                    <div class="challenge">
+                        <h4>Tu reto:</h4>
+                        <p>Ordena estos pasos lógicos para vencer la procrastinación:</p>
+                        <div class="drag-drop-container">
+                            <div class="drag-item" draggable="true" data-step="1">Identificar la tarea más pequeña posible</div>
+                            <div class="drag-item" draggable="true" data-step="2">Eliminar distracciones principales</div>
+                            <div class="drag-item" draggable="true" data-step="3">Poner un temporizador de 5 minutos</div>
+                            <div class="drag-item" draggable="true" data-step="4">Comenzar sin esperar motivación</div>
+                        </div>
+                        <div class="drop-zone" id="dropZone">
+                            <p>Arrastra los pasos aquí en el orden correcto</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="btn-secondary" id="continueFromAnalysis">Continuar a los módulos</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Módulos interactivos -->
+    <section id="modules" style="display: none;">
+        <div class="container">
+            <h2>Módulos interactivos</h2>
+            <p>Ahora practica con ejercicios específicos para superar la procrastinación.</p>
+            
+            <div class="modules-container">
+                <div class="module-card">
+                    <div class="module-icon"><i class="fas fa-clipboard-check"></i></div>
+                    <h3 class="module-title">Regla de los 5 minutos</h3>
+                    <p>Comprométete a trabajar solo 5 minutos. Generalmente, una vez que empiezas, continúas.</p>
+                    <div class="challenge">
+                        <h4>Tu reto:</h4>
+                        <p>Usa el temporizador para trabajar en tu tarea por 5 minutos.</p>
+                        <div class="timer" id="timerDisplay">05:00</div>
+                        <div class="timer-controls">
+                            <button class="btn-small" id="startTimer">Comenzar</button>
+                            <button class="btn-small" id="pauseTimer">Pausar</button>
+                            <button class="btn-small" id="resetTimer">Reiniciar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="module-card">
+                    <div class="module-icon"><i class="fas fa-ban"></i></div>
+                    <h3 class="module-title">Elimina distracciones</h3>
+                    <p>Identifica y elimina las distracciones principales de tu entorno.</p>
+                    <div class="challenge">
+                        <h4>Tu reto:</h4>
+                        <p>Marca las distracciones que puedes eliminar ahora:</p>
+                        <div class="checkbox-list">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="distraction1" value="telefono">
+                                <label for="distraction1">Teléfono en silencio o en otra habitación</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="distraction2" value="redes">
+                                <label for="distraction2">Cerrar pestañas de redes sociales</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="distraction3" value="notificaciones">
+                                <label for="distraction3">Desactivar notificaciones</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="distraction4" value="lugar">
+                                <label for="distraction4">Buscar un lugar tranquilo</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="module-card">
+                    <div class="module-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3 class="module-title">Objetivos claros</h3>
+                    <p>Un objetivo vago genera procrastinación. Convierte "estudiar" en "leer 10 páginas del capítulo 3".</p>
+                    <div class="challenge">
+                        <h4>Tu reto:</h4>
+                        <p>Convierte este objetivo vago en uno específico:</p>
+                        <p><strong>Objetivo vago:</strong> "Estudiar para el examen"</p>
+                        <input type="text" class="task-input" id="specificGoal" placeholder="Ej: Repasar los ejercicios 1 al 5 de la página 45">
+                        <button class="btn-small" id="saveGoal" style="margin-top: 10px;">Guardar objetivo</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="btn-secondary" id="continueFromModules">Continuar al sistema de hábitos</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sistema de hábitos -->
+    <section id="habits" style="display: none;">
+        <div class="container">
+            <h2>Sistema de hábitos</h2>
+            <p>La constancia es más importante que la motivación. Selecciona un mini-reto para hoy.</p>
+            
+            <div class="message info">
+                <p><strong>Mensaje clave:</strong> "No busques motivación, construye constancia"</p>
+            </div>
+            
+            <div class="habits-container">
+                <div class="habit-card" data-habit="5min">
+                    <h3>Regla de 5 minutos</h3>
+                    <p>Aplica la regla de 5 minutos a una tarea pendiente hoy.</p>
+                    <p><small>Tiempo estimado: 5 min</small></p>
+                </div>
+                
+                <div class="habit-card" data-habit="descomponer">
+                    <h3>Descomponer 1 tarea</h3>
+                    <p>Toma una tarea grande y divídela en 3 pasos pequeños.</p>
+                    <p><small>Tiempo estimado: 3 min</small></p>
+                </div>
+                
+                <div class="habit-card" data-habit="entorno">
+                    <h3>Prepara tu entorno</h3>
+                    <p>Elimina 3 distracciones de tu espacio de trabajo.</p>
+                    <p><small>Tiempo estimado: 10 min</small></p>
+                </div>
+                
+                <div class="habit-card" data-habit="reflexion">
+                    <h3>Reflexión estoica</h3>
+                    <p>Reflexiona: ¿Qué es lo peor que puede pasar si empiezo ahora?</p>
+                    <p><small>Tiempo estimado: 3 min</small></p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="btn-secondary" id="continueFromHabits">Continuar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recompensas y seguimiento -->
+    <section id="rewards" style="display: none;">
+        <div class="container">
+            <h2>Recompensas y seguimiento</h2>
+            <p>Celebra tus avances y haz un seguimiento de tu progreso.</p>
+            
+            <div class="progress-container">
+                <h3>Tu progreso en el taller</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <p id="progressText">Has completado el 0% del taller</p>
+            </div>
+            
+            <h3 style="margin-top: 40px;">Insignias obtenidas</h3>
+            <div class="badges-container">
+                <div class="badge" id="badge1">
+                    <i class="fas fa-play-circle"></i>
+                </div>
+                <div class="badge" id="badge2">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <div class="badge" id="badge3">
+                    <i class="fas fa-trophy"></i>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="btn-secondary" id="continueFromRewards">Continuar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cuando vuelves a procrastinar -->
+    <section id="setback" style="display: none;">
+        <div class="container">
+            <h2>Cuando vuelves a procrastinar</h2>
+            
+            <div class="message info">
+                <p><strong>Mensaje empático:</strong> "No fallaste, estás aprendiendo. La procrastinación es un hábito que se desaprende con práctica."</p>
+            </div>
+            
+            <p>Es normal tener retrocesos. Lo importante es aprender de ellos y reajustar tu estrategia.</p>
+            
+            <div class="challenge">
+                <h4>Ejercicio de reajuste</h4>
+                <p><strong>1. ¿Qué funcionó en tu intento anterior?</strong></p>
+                <input type="text" class="task-input" id="whatWorked" placeholder="Ej: La regla de 5 minutos me ayudó a empezar">
+                
+                <p style="margin-top: 20px;"><strong>2. ¿Qué puedes ajustar para la próxima vez?</strong></p>
+                <input type="text" class="task-input" id="whatAdjust" placeholder="Ej: Necesito hacerlo en la mañana cuando tengo más energía">
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="btn-secondary" id="continueFromSetback">Continuar al cierre</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cierre reflexivo -->
+    <section id="closing" style="display: none;">
+        <div class="container">
+            <div class="welcome-content" style="max-width: 800px;">
+                <div class="logo">
+                    <i class="fas fa-flag-checkered"></i>
+                </div>
+                <h1>Has completado el taller</h1>
+                <p>Recuerda que el cambio no sucede de la noche a la mañana. Cada pequeño paso cuenta y cada intento te acerca a dominar tu tiempo y tus acciones.</p>
+                
+                <div class="message success">
+                    <p><strong>Principio estoico aplicado:</strong> "No tienes control sobre todo lo que te pasa, pero sí sobre cómo respondes. La procrastinación es una respuesta; puedes entrenar una nueva."</p>
+                </div>
+                
+                <p>La autonomía, la reflexión y la acción consciente son tus herramientas más poderosas. Este taller es solo el comienzo de tu camino hacia una relación más saludable con tus responsibilidades.</p>
+                
+                <div class="challenge">
+                    <h4>Pregunta final de reflexión</h4>
+                    <p><strong>¿Qué pequeño paso vas a dar hoy?</strong></p>
+                    <input type="text" class="task-input" id="finalStep" placeholder="Describe el pequeño paso que darás hoy">
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <button class="btn-primary" id="finishBtn">Guardar mi compromiso</button>
+                    <p style="margin-top: 15px; font-size: 0.9rem; color: var(--gray);">Puedes volver a visitar este taller cuando lo necesites</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Variables globales
+        let userData = {
+            procrastinatedTask: "",
+            emotions: [],
+            taskSteps: [],
+            patterns: [],
+            mainCause: "",
+            selectedHabit: "",
+            finalStep: "",
+            progress: 0
+        };
+
+        let timerInterval;
+        let timerSeconds = 300; // 5 minutos en segundos
+        let timerRunning = false;
+
+        // Elementos del DOM
+        const sections = document.querySelectorAll('section');
+        const navButtons = document.querySelectorAll('.nav-btn');
+        const startBtn = document.getElementById('startBtn');
+        const emotionOptions = document.querySelectorAll('.emotion-option');
+        const continueFromEmotions = document.getElementById('continueFromEmotions');
+        const continueFromAnalysis = document.getElementById('continueFromAnalysis');
+        const continueFromModules = document.getElementById('continueFromModules');
+        const continueFromHabits = document.getElementById('continueFromHabits');
+        const continueFromRewards = document.getElementById('continueFromRewards');
+        const continueFromSetback = document.getElementById('continueFromSetback');
+        const finishBtn = document.getElementById('finishBtn');
+        
+        // Elementos del temporizador
+        const timerDisplay = document.getElementById('timerDisplay');
+        const startTimerBtn = document.getElementById('startTimer');
+        const pauseTimerBtn = document.getElementById('pauseTimer');
+        const resetTimerBtn = document.getElementById('resetTimer');
+        
+        // Elementos de arrastrar y soltar
+        const dragItems = document.querySelectorAll('.drag-item');
+        const dropZone = document.getElementById('dropZone');
+        
+        // Elementos de hábitos
+        const habitCards = document.querySelectorAll('.habit-card');
+        
+        // Inicialización
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navegación entre secciones
+            navButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    showSection(targetId);
+                });
+            });
+
+            // Pantalla de bienvenida
+            startBtn.addEventListener('click', function() {
+                const task = document.getElementById('procrastinatedTask').value;
+                if (task.trim() === "") {
+                    alert("Por favor, escribe qué sueles postergar para personalizar tu experiencia.");
+                    return;
+                }
+                userData.procrastinatedTask = task;
+                showSection('emotional-intro');
+            });
+
+            // Selección de emociones
+            emotionOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    const emotion = this.getAttribute('data-emotion');
+                    
+                    // Alternar selección
+                    if (this.classList.contains('selected')) {
+                        this.classList.remove('selected');
+                        const index = userData.emotions.indexOf(emotion);
+                        if (index > -1) {
+                            userData.emotions.splice(index, 1);
+                        }
+                    } else {
+                        this.classList.add('selected');
+                        userData.emotions.push(emotion);
+                    }
+                });
+            });
+
+            // Continuar desde emociones
+            continueFromEmotions.addEventListener('click', function() {
+                if (userData.emotions.length === 0) {
+                    alert("Por favor, selecciona al menos una emoción para continuar.");
+                    return;
+                }
+                showSection('analysis');
+            });
+
+            // Continuar desde análisis
+            continueFromAnalysis.addEventListener('click', function() {
+                // Guardar los pasos de la tarea
+                const step1 = document.getElementById('taskStep1').value;
+                const step2 = document.getElementById('taskStep2').value;
+                const step3 = document.getElementById('taskStep3').value;
+                
+                if (step1.trim() !== "" && step2.trim() !== "" && step3.trim() !== "") {
+                    userData.taskSteps = [step1, step2, step3];
+                }
+                
+                // Guardar patrones
+                const patternCheckboxes = document.querySelectorAll('input[type="checkbox"][value]:checked');
+                userData.patterns = Array.from(patternCheckboxes).map(cb => cb.value);
+                
+                // Guardar causa principal
+                const mainCauseSelect = document.getElementById('mainCause');
+                userData.mainCause = mainCauseSelect.value;
+                
+                showSection('modules');
+            });
+
+            // Temporizador
+            startTimerBtn.addEventListener('click', startTimer);
+            pauseTimerBtn.addEventListener('click', pauseTimer);
+            resetTimerBtn.addEventListener('click', resetTimer);
+            
+            // Arrastrar y soltar
+            setupDragAndDrop();
+            
+            // Selección de hábitos
+            habitCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // Remover selección de todas las tarjetas
+                    habitCards.forEach(c => c.classList.remove('selected'));
+                    
+                    // Seleccionar esta tarjeta
+                    this.classList.add('selected');
+                    userData.selectedHabit = this.getAttribute('data-habit');
+                });
+            });
+            
+            // Continuar desde módulos
+            continueFromModules.addEventListener('click', function() {
+                showSection('habits');
+            });
+            
+            // Continuar desde hábitos
+            continueFromHabits.addEventListener('click', function() {
+                if (userData.selectedHabit === "") {
+                    alert("Por favor, selecciona un mini-reto para hoy.");
+                    return;
+                }
+                
+                // Actualizar progreso
+                userData.progress = 70;
+                updateProgress();
+                unlockBadge(2); // Desbloquear segunda insignia
+                
+                showSection('rewards');
+            });
+            
+            // Continuar desde recompensas
+            continueFromRewards.addEventListener('click', function() {
+                showSection('setback');
+            });
+            
+            // Continuar desde retroceso
+            continueFromSetback.addEventListener('click', function() {
+                // Guardar respuestas
+                const whatWorked = document.getElementById('whatWorked').value;
+                const whatAdjust = document.getElementById('whatAdjust').value;
+                
+                if (whatWorked.trim() !== "" && whatAdjust.trim() !== "") {
+                    userData.whatWorked = whatWorked;
+                    userData.whatAdjust = whatAdjust;
+                }
+                
+                showSection('closing');
+            });
+            
+            // Finalizar
+            finishBtn.addEventListener('click', function() {
+                const finalStep = document.getElementById('finalStep').value;
+                
+                if (finalStep.trim() === "") {
+                    alert("Por favor, escribe el pequeño paso que darás hoy para completar el taller.");
+                    return;
+                }
+                
+                userData.finalStep = finalStep;
+                userData.progress = 100;
+                updateProgress();
+                unlockBadge(3); // Desbloquear tercera insignia
+                
+                // Mostrar mensaje final
+                alert("¡Excelente! Has completado el taller y has definido tu primer paso. Recuerda: la constancia es más poderosa que la motivación. ¡Puedes volver a este taller cuando lo necesites!");
+                
+                // Opcional: podrías guardar los datos en localStorage
+                localStorage.setItem('procrastinationWorkshopData', JSON.stringify(userData));
+            });
+            
+            // Inicializar barra de progreso
+            updateProgress();
+            unlockBadge(1); // Desbloquear primera insignia por empezar
+        });
+
+        // Funciones de utilidad
+        function showSection(sectionId) {
+            // Ocultar todas las secciones
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Mostrar la sección solicitada
+            document.getElementById(sectionId).style.display = 'block';
+            
+            // Actualizar botones de navegación
+            navButtons.forEach(btn => {
+                if (btn.getAttribute('data-target') === sectionId) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            
+            // Ajustar el scroll hacia arriba
+            window.scrollTo(0, 0);
+        }
+
+        function startTimer() {
+            if (timerRunning) return;
+            
+            timerRunning = true;
+            timerInterval = setInterval(() => {
+                timerSeconds--;
+                
+                const minutes = Math.floor(timerSeconds / 60);
+                const seconds = timerSeconds % 60;
+                
+                timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                if (timerSeconds <= 0) {
+                    clearInterval(timerInterval);
+                    timerRunning = false;
+                    alert("¡Tiempo completado! ¿Ves? 5 minutos pasan rápido y ya has empezado. ¿Quieres continuar?");
+                }
+            }, 1000);
+        }
+
+        function pauseTimer() {
+            clearInterval(timerInterval);
+            timerRunning = false;
+        }
+
+        function resetTimer() {
+            clearInterval(timerInterval);
+            timerRunning = false;
+            timerSeconds = 300;
+            timerDisplay.textContent = "05:00";
+        }
+
+        function setupDragAndDrop() {
+            let draggedItem = null;
+            
+            dragItems.forEach(item => {
+                item.addEventListener('dragstart', function() {
+                    draggedItem = this;
+                    setTimeout(() => {
+                        this.style.display = 'none';
+                    }, 0);
+                    this.classList.add('dragging');
+                });
+                
+                item.addEventListener('dragend', function() {
+                    setTimeout(() => {
+                        draggedItem.style.display = 'block';
+                        draggedItem = null;
+                    }, 0);
+                    this.classList.remove('dragging');
+                });
+            });
+            
+            dropZone.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                this.style.backgroundColor = 'rgba(22, 186, 197, 0.2)';
+            });
+            
+            dropZone.addEventListener('dragleave', function() {
+                this.style.backgroundColor = 'rgba(22, 186, 197, 0.1)';
+            });
+            
+            dropZone.addEventListener('drop', function(e) {
+                e.preventDefault();
+                this.style.backgroundColor = 'rgba(22, 186, 197, 0.1)';
+                
+                if (draggedItem) {
+                    this.appendChild(draggedItem);
+                    
+                    // Verificar si todos los elementos están en la zona
+                    const allInDropZone = Array.from(dragItems).every(item => 
+                        dropZone.contains(item)
+                    );
+                    
+                    if (allInDropZone) {
+                        showMessage("¡Perfecto! Has ordenado los pasos correctamente. Este es un buen algoritmo para vencer la procrastinación.", "success");
+                    }
+                }
+            });
+        }
+
+        function showMessage(text, type) {
+            // Crear mensaje temporal
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${type}`;
+            messageDiv.innerHTML = `<p>${text}</p>`;
+            
+            // Insertar después del encabezado actual
+            const currentSection = document.querySelector('section[style="display: block;"]');
+            const container = currentSection.querySelector('.container');
+            const firstChild = container.firstChild;
+            
+            container.insertBefore(messageDiv, firstChild.nextSibling);
+            
+            // Eliminar después de 5 segundos
+            setTimeout(() => {
+                messageDiv.remove();
+            }, 5000);
+        }
+
+        function updateProgress() {
+            const progressFill = document.getElementById('progressFill');
+            const progressText = document.getElementById('progressText');
+            
+            progressFill.style.width = `${userData.progress}%`;
+            progressText.textContent = `Has completado el ${userData.progress}% del taller`;
+        }
+
+        function unlockBadge(badgeNumber) {
+            const badge = document.getElementById(`badge${badgeNumber}`);
+            badge.classList.add('unlocked');
+            
+            // Añadir tooltip según la insignia
+            let badgeName = "";
+            if (badgeNumber === 1) badgeName = "Enfoque";
+            if (badgeNumber === 2) badgeName = "Constancia";
+            if (badgeNumber === 3) badgeName = "Primer Paso";
+            
+            badge.title = `Insignia desbloqueada: ${badgeName}`;
+        }
+    </script>
+</body>
+</html>
