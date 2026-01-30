@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Autenticidad Personal: El desafío de ser tú mismo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Slab:wght@300;400;500&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Slab:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -22,16 +19,16 @@
             --success: #4cc9f0;
             --warning: #f8961e;
             --border-radius: 12px;
-            --shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            --shadow: 0 10px 20px rgba(0,0,0,0.1);
             --transition: all 0.3s ease;
         }
-
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
@@ -39,18 +36,18 @@
             background-color: #f0f2f5;
             scroll-behavior: smooth;
         }
-
+        
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-
+        
         header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 3rem 0 2.5rem;
+            padding: 2rem 0 2.5rem;
             text-align: center;
             border-bottom-left-radius: 30px;
             border-bottom-right-radius: 30px;
@@ -59,7 +56,7 @@
             overflow: hidden;
             margin-bottom: 2.5rem;
         }
-
+        
         header::before {
             content: '';
             position: absolute;
@@ -70,9 +67,29 @@
             background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
             opacity: 0.1;
         }
-
+        
+        .marca {
+            margin-bottom: 1.5rem;
+        }
+        
+        .marca-superior {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        
+        .marca-inferior {
+            font-size: 1.1rem;
+            font-weight: 300;
+            opacity: 0.9;
+            font-style: italic;
+            margin-bottom: 0.8rem;
+        }
+        
         .logo {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 700;
             margin-bottom: 0.8rem;
             display: flex;
@@ -80,18 +97,18 @@
             justify-content: center;
             gap: 10px;
         }
-
+        
         .logo i {
             color: var(--accent);
         }
-
+        
         .tagline {
             font-size: 1.2rem;
             font-weight: 300;
             margin-bottom: 1.8rem;
             opacity: 0.9;
         }
-
+        
         .intro-text {
             max-width: 800px;
             margin: 0 auto 2rem;
@@ -100,7 +117,7 @@
             line-height: 1.7;
             padding: 0 10px;
         }
-
+        
         .section-title {
             font-family: 'Roboto Slab', serif;
             font-size: 2.2rem;
@@ -110,7 +127,7 @@
             padding-bottom: 12px;
             line-height: 1.3;
         }
-
+        
         .section-title::after {
             content: '';
             position: absolute;
@@ -121,7 +138,7 @@
             background-color: var(--accent);
             border-radius: 2px;
         }
-
+        
         .section {
             padding: 3.5rem 0;
             background-color: white;
@@ -129,22 +146,22 @@
             margin: 2.5rem 0;
             box-shadow: var(--shadow);
         }
-
+        
         .section .container {
             padding: 0 25px;
         }
-
+        
         .section-alt {
             background-color: #f8f9fa;
         }
-
+        
         .pillars-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 2.5rem;
         }
-
+        
         .pillar-card {
             background: white;
             border-radius: var(--border-radius);
@@ -154,64 +171,64 @@
             border-top: 4px solid var(--primary);
             height: 100%;
         }
-
+        
         .pillar-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
-
+        
         .pillar-card:nth-child(2) {
             border-top-color: var(--success);
         }
-
+        
         .pillar-card:nth-child(3) {
             border-top-color: var(--warning);
         }
-
+        
         .pillar-card:nth-child(4) {
             border-top-color: var(--accent);
         }
-
+        
         .pillar-icon {
             font-size: 2.5rem;
             color: var(--primary);
             margin-bottom: 1.2rem;
         }
-
+        
         .pillar-title {
             font-size: 1.4rem;
             margin-bottom: 1.2rem;
             color: var(--secondary);
             line-height: 1.3;
         }
-
+        
         .pillar-card p {
             margin-bottom: 1.2rem;
             line-height: 1.6;
         }
-
+        
         .subtopics-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 1.8rem;
             margin-top: 2.5rem;
         }
-
+        
         .subtopic-card {
             background: white;
             border-radius: var(--border-radius);
             padding: 1.8rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: var(--transition);
             border-left: 4px solid var(--primary);
             height: 100%;
         }
-
+        
         .subtopic-card:hover {
             transform: translateX(5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
-
+        
         .subtopic-title {
             font-size: 1.2rem;
             color: var(--secondary);
@@ -221,16 +238,16 @@
             gap: 12px;
             line-height: 1.4;
         }
-
+        
         .subtopic-title i {
             color: var(--accent);
         }
-
+        
         .subtopic-card p {
             margin-bottom: 1.2rem;
             line-height: 1.6;
         }
-
+        
         .question-box {
             background-color: #e9f7fe;
             border-left: 4px solid var(--success);
@@ -240,30 +257,30 @@
             font-style: italic;
             line-height: 1.6;
         }
-
+        
         .conclusion-container {
             background: linear-gradient(135deg, #f8f9fa, #e9ecef);
             padding: 2.8rem;
             border-radius: var(--border-radius);
             margin-top: 2.5rem;
             text-align: center;
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0,0,0,0.05);
         }
-
+        
         .conclusion-title {
             font-size: 1.8rem;
             color: var(--secondary);
             margin-bottom: 1.8rem;
             line-height: 1.3;
         }
-
+        
         .values-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1.8rem;
             margin-top: 2.5rem;
         }
-
+        
         .value-card {
             background: white;
             padding: 1.8rem;
@@ -272,34 +289,34 @@
             transition: var(--transition);
             height: 100%;
         }
-
+        
         .value-card:hover {
             transform: translateY(-5px);
         }
-
+        
         .value-icon {
             font-size: 2.5rem;
             color: var(--primary);
             margin-bottom: 1.2rem;
         }
-
+        
         .value-title {
             font-size: 1.3rem;
             color: var(--secondary);
             margin-bottom: 1rem;
             line-height: 1.3;
         }
-
+        
         .value-card p {
             line-height: 1.6;
         }
-
+        
         .btn-container {
             text-align: center;
             margin-top: 3rem;
             padding: 0 10px;
         }
-
+        
         .btn {
             display: inline-block;
             background: linear-gradient(to right, var(--primary), var(--secondary));
@@ -314,33 +331,33 @@
             transition: var(--transition);
             box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
         }
-
+        
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(67, 97, 238, 0.4);
         }
-
+        
         .btn:active {
             transform: translateY(0);
         }
-
+        
         .progress-container {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 5px;
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(255,255,255,0.1);
             z-index: 1000;
         }
-
+        
         .progress-bar {
             height: 100%;
             background: linear-gradient(to right, var(--accent), var(--success));
             width: 0%;
             transition: width 0.3s ease;
         }
-
+        
         footer {
             background-color: var(--dark);
             color: white;
@@ -348,25 +365,33 @@
             padding: 2.5rem 0;
             margin-top: 4rem;
         }
-
+        
         footer .container {
             padding: 0 25px;
         }
-
+        
         .footer-text {
             opacity: 0.8;
             font-size: 0.95rem;
             margin-top: 1.2rem;
             line-height: 1.5;
         }
-
+        
+        .firma {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--light);
+            margin-top: 1.5rem;
+            letter-spacing: 1px;
+        }
+        
         .highlight {
             background-color: rgba(67, 97, 238, 0.1);
             padding: 0.2rem 0.5rem;
             border-radius: 4px;
             font-weight: 500;
         }
-
+        
         .quote {
             font-style: italic;
             border-left: 4px solid var(--accent);
@@ -376,120 +401,134 @@
             font-size: 1.1rem;
             line-height: 1.7;
         }
-
+        
         .author {
             text-align: right;
             font-weight: 600;
             color: var(--secondary);
             margin-top: 0.8rem;
         }
-
+        
         main .container {
             padding: 0 25px;
         }
-
+        
         main p {
             margin-bottom: 1.2rem;
             line-height: 1.7;
         }
-
+        
         @media (max-width: 768px) {
             .section-title {
                 font-size: 1.8rem;
                 margin-bottom: 1.5rem;
             }
-
-            .pillars-grid,
-            .subtopics-container,
-            .values-grid {
+            
+            .pillars-grid, .subtopics-container, .values-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
-
+            
             .section {
                 padding: 2.5rem 0;
                 margin: 2rem 0;
             }
-
+            
             .section .container {
                 padding: 0 20px;
             }
-
+            
             .conclusion-container {
                 padding: 2rem;
                 margin-top: 2rem;
             }
-
+            
             .logo {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
-
+            
+            .marca-superior {
+                font-size: 1.5rem;
+            }
+            
+            .marca-inferior {
+                font-size: 1rem;
+            }
+            
             .intro-text {
                 font-size: 1rem;
                 padding: 0 5px;
             }
-
-            .pillar-card,
-            .subtopic-card,
-            .value-card {
+            
+            .pillar-card, .subtopic-card, .value-card {
                 padding: 1.5rem;
             }
-
+            
             main .container {
                 padding: 0 20px;
             }
-
+            
             header {
-                padding: 2.5rem 0 2rem;
+                padding: 1.8rem 0 2rem;
                 margin-bottom: 2rem;
             }
-
+            
             .btn {
                 padding: 0.9rem 1.8rem;
                 font-size: 1rem;
             }
         }
-
+        
         @media (max-width: 480px) {
             .container {
                 width: 95%;
                 padding: 0 15px;
             }
-
+            
             .section .container {
                 padding: 0 15px;
             }
-
+            
             main .container {
                 padding: 0 15px;
             }
-
-            .pillar-card,
-            .subtopic-card,
-            .value-card {
+            
+            .pillar-card, .subtopic-card, .value-card {
                 padding: 1.2rem;
             }
-
+            
             .conclusion-container {
                 padding: 1.5rem;
             }
-
+            
             .section-title {
                 font-size: 1.6rem;
+            }
+            
+            .marca-superior {
+                font-size: 1.3rem;
+            }
+            
+            .marca-inferior {
+                font-size: 0.9rem;
             }
         }
     </style>
 </head>
-
 <body>
     <!-- Barra de progreso -->
     <div class="progress-container">
         <div class="progress-bar" id="progressBar"></div>
     </div>
-
+    
     <!-- Encabezado -->
     <header>
         <div class="container">
+            <div class="marca">
+                <div class="marca-superior">EducaTuMente</div>
+                <div class="marca-inferior">Mentes que aprenden, vidas que evolucionan</div>
+            </div>
+            
             <div class="logo">
                 <i class="fas fa-user-shield"></i>
                 <span>Autenticidad Personal</span>
@@ -501,66 +540,55 @@
             <a href="#taller" class="btn">Explorar Taller</a>
         </div>
     </header>
-
+    
     <!-- Sección principal -->
     <main class="container">
         <!-- Análisis del problema -->
         <section class="section" id="taller">
             <div class="container">
-                <h2 class="section-title">Análisis del problema: Pensamiento Computacional aplicado a la presión social
-                </h2>
-                <p>Vamos a analizar la presión social usando las mismas herramientas que empleamos para resolver
-                    problemas complejos en programación. Esto nos ayudará a entender mejor lo que sucede y a encontrar
-                    soluciones más efectivas.</p>
-
+                <h2 class="section-title">Análisis del problema: Pensamiento Computacional aplicado a la presión social</h2>
+                <p>Vamos a analizar la presión social usando las mismas herramientas que empleamos para resolver problemas complejos en programación. Esto nos ayudará a entender mejor lo que sucede y a encontrar soluciones más efectivas.</p>
+                
                 <div class="pillars-grid">
                     <div class="pillar-card">
                         <div class="pillar-icon">
                             <i class="fas fa-puzzle-piece"></i>
                         </div>
                         <h3 class="pillar-title">Descomposición</h3>
-                        <p>Dividamos la "presión social" en partes más pequeñas y manejables: influencia de amigos,
-                            miedo al rechazo, necesidad de aprobación, etc. Así podemos abordar cada componente por
-                            separado.</p>
+                        <p>Dividamos la "presión social" en partes más pequeñas y manejables: influencia de amigos, miedo al rechazo, necesidad de aprobación, etc. Así podemos abordar cada componente por separado.</p>
                         <div class="question-box">
-                            ¿Qué situaciones específicas te hacen sentir presión? ¿Puedes identificar cada elemento por
-                            separado?
+                            ¿Qué situaciones específicas te hacen sentir presión? ¿Puedes identificar cada elemento por separado?
                         </div>
                     </div>
-
+                    
                     <div class="pillar-card">
                         <div class="pillar-icon">
                             <i class="fas fa-project-diagram"></i>
                         </div>
                         <h3 class="pillar-title">Reconocimiento de Patrones</h3>
-                        <p>Identifica patrones en tu comportamiento y en el de los demás. ¿Siempre cedes a la presión en
-                            ciertos contextos? ¿Hay personas que siempre influyen en tus decisiones?</p>
+                        <p>Identifica patrones en tu comportamiento y en el de los demás. ¿Siempre cedes a la presión en ciertos contextos? ¿Hay personas que siempre influyen en tus decisiones?</p>
                         <div class="question-box">
                             ¿Qué patrones puedes identificar en cómo respondes a la presión social?
                         </div>
                     </div>
-
+                    
                     <div class="pillar-card">
                         <div class="pillar-icon">
                             <i class="fas fa-filter"></i>
                         </div>
                         <h3 class="pillar-title">Abstracción</h3>
-                        <p>Extrae lo esencial del problema. La presión social no es sobre cada situación específica,
-                            sino sobre el miedo a no ser aceptado. Enfócate en esa raíz, no en cada manifestación
-                            superficial.</p>
+                        <p>Extrae lo esencial del problema. La presión social no es sobre cada situación específica, sino sobre el miedo a no ser aceptado. Enfócate en esa raíz, no en cada manifestación superficial.</p>
                         <div class="question-box">
                             ¿Cuál es la esencia de tu miedo? ¿Es realmente el rechazo o algo más profundo?
                         </div>
                     </div>
-
+                    
                     <div class="pillar-card">
                         <div class="pillar-icon">
                             <i class="fas fa-code-branch"></i>
                         </div>
                         <h3 class="pillar-title">Pensamiento Algorítmico</h3>
-                        <p>Crea "algoritmos" personales para manejar situaciones de presión. Si sucede X, entonces haré
-                            Y. Por ejemplo: "Si me presionan para hacer algo que no quiero, entonces haré una pausa,
-                            evaluaré mis valores y responderé con firmeza".</p>
+                        <p>Crea "algoritmos" personales para manejar situaciones de presión. Si sucede X, entonces haré Y. Por ejemplo: "Si me presionan para hacer algo que no quiero, entonces haré una pausa, evaluaré mis valores y responderé con firmeza".</p>
                         <div class="question-box">
                             ¿Qué pasos concretos puedes seguir cuando te sientes presionado?
                         </div>
@@ -568,99 +596,89 @@
                 </div>
             </div>
         </section>
-
+        
         <!-- Desarrollo de subtemas -->
         <section class="section section-alt">
             <div class="container">
                 <h2 class="section-title">Los rostros de la presión social</h2>
-                <p>La presión social se manifiesta de muchas formas. Reconocerlas es el primer paso para gestionarlas
-                    con sabiduría y autocuidado.</p>
-
+                <p>La presión social se manifiesta de muchas formas. Reconocerlas es el primer paso para gestionarlas con sabiduría y autocuidado.</p>
+                
                 <div class="subtopics-container" id="subtopicsContainer">
                     <!-- Los subtemas se cargarán aquí dinámicamente -->
                 </div>
             </div>
         </section>
-
+        
         <!-- Conclusión -->
         <section class="section">
             <div class="container">
                 <h2 class="section-title">Conclusión: Construyendo tu fortaleza interior</h2>
-
+                
                 <div class="quote">
-                    "No busques que los acontecimientos sucedan como tú quieres, sino quiere los acontecimientos como
-                    suceden, y tu vida fluirá bien."
+                    "No busques que los acontecimientos sucedan como tú quieres, sino quiere los acontecimientos como suceden, y tu vida fluirá bien."
                     <div class="author">- Epicteto, filósofo estoico</div>
                 </div>
-
-                <p>La autenticidad no es un destino, sino un camino que recorres cada día. No se trata de rebelarte
-                    contra todo, sino de elegir conscientemente qué aceptas y qué rechazas, basándote en tus valores, no
-                    en tus miedos.</p>
-
+                
+                <p>La autenticidad no es un destino, sino un camino que recorres cada día. No se trata de rebelarte contra todo, sino de elegir conscientemente qué aceptas y qué rechazas, basándote en tus valores, no en tus miedos.</p>
+                
                 <div class="conclusion-container">
                     <h3 class="conclusion-title">Los cuatro pilares de tu autenticidad</h3>
-
+                    
                     <div class="values-grid">
                         <div class="value-card">
                             <div class="value-icon">
                                 <i class="fas fa-eye"></i>
                             </div>
                             <h4 class="value-title">Autoconocimiento</h4>
-                            <p>Conócete profundamente: tus valores, tus límites, tus fortalezas y tus áreas de
-                                crecimiento. La autenticidad comienza con la honestidad hacia ti mismo.</p>
+                            <p>Conócete profundamente: tus valores, tus límites, tus fortalezas y tus áreas de crecimiento. La autenticidad comienza con la honestidad hacia ti mismo.</p>
                         </div>
-
+                        
                         <div class="value-card">
                             <div class="value-icon">
                                 <i class="fas fa-feather-alt"></i>
                             </div>
                             <h4 class="value-title">Autonomía Emocional</h4>
-                            <p>Aprende a regular tus emociones sin depender de la validación externa. Tus sentimientos
-                                son importantes, pero no tienen que controlar tus decisiones.</p>
+                            <p>Aprende a regular tus emociones sin depender de la validación externa. Tus sentimientos son importantes, pero no tienen que controlar tus decisiones.</p>
                         </div>
-
+                        
                         <div class="value-card">
                             <div class="value-icon">
                                 <i class="fas fa-heart"></i>
                             </div>
                             <h4 class="value-title">Autoestima Sólida</h4>
-                            <p>Construye una valoración personal que no dependa de logros externos ni de la aprobación
-                                de otros. Eres valioso por existir, no por lo que consigues.</p>
+                            <p>Construye una valoración personal que no dependa de logros externos ni de la aprobación de otros. Eres valioso por existir, no por lo que consigues.</p>
                         </div>
-
+                        
                         <div class="value-card">
                             <div class="value-icon">
                                 <i class="fas fa-seedling"></i>
                             </div>
                             <h4 class="value-title">Crecimiento Continuo</h4>
-                            <p>La autenticidad no es estática. A medida que creces y cambias, tu expresión auténtica
-                                también evoluciona. Permítete transformarte con intención.</p>
+                            <p>La autenticidad no es estática. A medida que creces y cambias, tu expresión auténtica también evoluciona. Permítete transformarte con intención.</p>
                         </div>
                     </div>
-
-                    <p style="margin-top: 2rem; font-size: 1.1rem; line-height: 1.7;">Recuerda: La persona más
-                        importante a quien debes lealtad es a ti mismo. No a una versión idealizada, sino a quien
-                        realmente eres, con tus luces y tus sombras.</p>
+                    
+                    <p style="margin-top: 2rem; font-size: 1.1rem; line-height: 1.7;">Recuerda: La persona más importante a quien debes lealtad es a ti mismo. No a una versión idealizada, sino a quien realmente eres, con tus luces y tus sombras.</p>
                 </div>
-
+                
                 <div class="btn-container">
                     <button class="btn" id="reflexionBtn">Generar reflexión personalizada</button>
                 </div>
-
-                <div id="reflexionOutput"
-                    style="margin-top: 2rem; padding: 1.8rem; background-color: #f0f7ff; border-radius: var(--border-radius); display: none; line-height: 1.6;">
+                
+                <div id="reflexionOutput" style="margin-top: 2rem; padding: 1.8rem; background-color: #f0f7ff; border-radius: var(--border-radius); display: none; line-height: 1.6;">
                     <!-- La reflexión generada aparecerá aquí -->
                 </div>
             </div>
         </section>
     </main>
-
+    
     <!-- Pie de página -->
     <footer>
         <div class="container">
-            <p>Taller diseñado para estudiantes ecuatorianos</p>
+            <p>Taller diseñado para estudiantes ecuatorianos de 15 a 18 años</p>
             <p class="footer-text">"Presión social y conformismo: el desafío de mantener la autenticidad personal"</p>
             <p class="footer-text">© 2026 - Desarrollo de Software Educativo con enfoque en Educación Emocional</p>
+            <div class="firma">Edwin</div>
         </div>
     </footer>
 
@@ -668,7 +686,7 @@
         // Datos para el contenido dinámico
         const contenido = {
             introduccion: `Amigo, amiga... ¿alguna vez has sentido que para encajar debes apagar partes de quién eres? Como si hubiera un molde invisible que todos esperan que ocupes. Hoy no vamos a hablar de teoría abstracta, sino de tu vida real, de esas situaciones donde sientes que traicionas algo esencial en ti para ser aceptado. Este taller es un espacio seguro para explorar cómo mantener tu autenticidad en un mundo lleno de presiones. No te prometo soluciones mágicas, sino herramientas reales para construir tu identidad desde la fortaleza interior. ¿Me acompañas en este viaje de autodescubrimiento?`,
-
+            
             subtemas: [
                 {
                     titulo: "Influencia de los amigos y pares",
@@ -721,7 +739,7 @@
                     descripcion: "La presión social constante desgasta tu salud mental como la marea desgasta la roca. Fortalecer tu autoestima es construir un dique que proteja tu bienestar emocional."
                 }
             ],
-
+            
             reflexiones: [
                 "Hoy elijo honrar una parte de mí que normalmente escondo. No tiene que ser algo grande, basta con expresar una opinión genuina o elegir algo que realmente me gusta.",
                 "La próxima vez que sienta presión para conformarme, haré una pausa de 10 segundos para preguntarme: '¿Esto realmente me representa o solo busco evitar conflicto?'",
@@ -730,19 +748,19 @@
                 "Hoy observaré mis elecciones cotidianas: desde la ropa hasta la música que escucho. ¿Cuántas son realmente mías y cuántas son adoptadas para encajar? Sin juicio, solo con curiosidad."
             ]
         };
-
+        
         // Elementos DOM
         const introText = document.getElementById('introText');
         const subtopicsContainer = document.getElementById('subtopicsContainer');
         const reflexionBtn = document.getElementById('reflexionBtn');
         const reflexionOutput = document.getElementById('reflexionOutput');
         const progressBar = document.getElementById('progressBar');
-
+        
         // Inicializar contenido
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             // Cargar introducción
             introText.innerHTML = `<p>${contenido.introduccion}</p>`;
-
+            
             // Cargar subtemas
             contenido.subtemas.forEach(subtema => {
                 const subtemaHTML = `
@@ -759,49 +777,49 @@
                 `;
                 subtopicsContainer.innerHTML += subtemaHTML;
             });
-
+            
             // Configurar barra de progreso
             window.addEventListener('scroll', updateProgressBar);
-
+            
             // Configurar botón de reflexión
             reflexionBtn.addEventListener('click', generarReflexion);
         });
-
+        
         // Función para actualizar la barra de progreso
         function updateProgressBar() {
             const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             const scrolled = (window.scrollY / windowHeight) * 100;
             progressBar.style.width = scrolled + '%';
         }
-
+        
         // Función para generar reflexión aleatoria
         function generarReflexion() {
             const indiceAleatorio = Math.floor(Math.random() * contenido.reflexiones.length);
             const reflexion = contenido.reflexiones[indiceAleatorio];
-
+            
             reflexionOutput.innerHTML = `
                 <h3 style="color: var(--secondary); margin-bottom: 1rem;">Tu reflexión para hoy:</h3>
                 <p style="font-size: 1.2rem; line-height: 1.8;">${reflexion}</p>
                 <p style="margin-top: 1rem; font-style: italic; color: var(--gray);">Tómate un momento para interiorizar esto. La autenticidad se construye con pequeñas decisiones diarias.</p>
             `;
-
+            
             reflexionOutput.style.display = 'block';
             reflexionOutput.scrollIntoView({ behavior: 'smooth' });
-
+            
             // Cambiar temporalmente el texto del botón
             reflexionBtn.textContent = "Generar otra reflexión";
             setTimeout(() => {
                 reflexionBtn.textContent = "Generar reflexión personalizada";
             }, 2000);
         }
-
+        
         // Efecto de aparición suave para las secciones
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
-
-        const observer = new IntersectionObserver(function (entries) {
+        
+        const observer = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
@@ -809,7 +827,7 @@
                 }
             });
         }, observerOptions);
-
+        
         // Aplicar observador a las secciones
         document.querySelectorAll('.section').forEach(section => {
             section.style.opacity = '0';
@@ -819,5 +837,4 @@
         });
     </script>
 </body>
-
 </html>
