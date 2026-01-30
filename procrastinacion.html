@@ -35,12 +35,54 @@
             color: var(--dark);
             background-color: #f5f7ff;
             overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .main-content {
+            flex: 1;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+
+        /* Encabezado */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .brand {
+            margin-bottom: 5px;
+        }
+
+        .brand-main {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+        }
+
+        .brand-tagline {
+            font-size: 1rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        .workshop-title {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            font-size: 1.8rem;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         h1, h2, h3, h4 {
@@ -119,7 +161,7 @@
 
         /* Pantalla de bienvenida */
         #welcome {
-            min-height: 100vh;
+            min-height: calc(100vh - 180px);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -450,8 +492,39 @@
             display: block;
         }
 
+        /* Pie de página */
+        .footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: auto;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
+            .header {
+                padding: 10px 0;
+            }
+            
+            .brand-main {
+                font-size: 1.8rem;
+            }
+            
+            .brand-tagline {
+                font-size: 0.9rem;
+            }
+            
+            .workshop-title {
+                font-size: 1.4rem;
+            }
+            
             h1 {
                 font-size: 2rem;
             }
@@ -482,379 +555,404 @@
             section {
                 padding: 40px 0;
             }
+            
+            #welcome {
+                min-height: calc(100vh - 200px);
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Navegación entre secciones -->
-    <div class="nav-container">
-        <div class="nav-btn active" data-target="welcome">1</div>
-        <div class="nav-btn" data-target="emotional-intro">2</div>
-        <div class="nav-btn" data-target="analysis">3</div>
-        <div class="nav-btn" data-target="modules">4</div>
-        <div class="nav-btn" data-target="habits">5</div>
-        <div class="nav-btn" data-target="rewards">6</div>
-        <div class="nav-btn" data-target="setback">7</div>
-        <div class="nav-btn" data-target="closing">8</div>
-    </div>
-
-    <!-- Pantalla de bienvenida -->
-    <section id="welcome">
+    <!-- Encabezado -->
+    <header class="header">
         <div class="container">
-            <div class="welcome-content">
-                <div class="logo">
-                    <i class="fas fa-play-circle"></i>
-                </div>
-                <h1>Cómo dejar de procrastinar</h1>
-                <p class="tagline">(paso a paso y sin estrés)</p>
-                <p>Un taller práctico y vivencial diseñado para estudiantes como tú. Aquí no solo leerás consejos, sino que participarás activamente, tomarás decisiones y ejecutarás pequeños retos reales.</p>
-                
-                <div class="challenge">
-                    <h4>Reflexión inicial</h4>
-                    <p>Para personalizar tu experiencia, responde:</p>
-                </div>
-                
-                <p><strong>¿Qué es lo que más sueles postergar?</strong></p>
-                <input type="text" class="task-input" id="procrastinatedTask" placeholder="Ej: Estudiar para el examen de matemáticas, hacer la tarea de historia...">
-                
-                <button class="btn-primary" id="startBtn">Empezar mi proceso</button>
+            <div class="brand">
+                <div class="brand-main">EducaTuMente</div>
+                <div class="brand-tagline">Mentes que aprenden, vidas que evolucionan</div>
             </div>
+            <div class="workshop-title">Cómo dejar de procrastinar (paso a paso y sin estrés)</div>
         </div>
-    </section>
+    </header>
 
-    <!-- Introducción emocional guiada -->
-    <section id="emotional-intro" style="display: none;">
-        <div class="container">
-            <h2>Entendiendo la procrastinación</h2>
-            <p>La procrastinación no es un defecto de personalidad, sino un <strong>comportamiento emocional</strong>. Entender cómo te sientes es el primer paso para cambiar.</p>
-            
-            <div class="message info">
-                <p><strong>Recuerda esto:</strong> Procrastinar no significa que seas flojo. Generalmente es una respuesta a emociones como el miedo al fracaso, la ansiedad o la falta de claridad.</p>
-            </div>
-            
-            <p><strong>Selecciona cómo te sientes cuando procrastinas:</strong></p>
-            
-            <div class="emotion-options">
-                <div class="emotion-option" data-emotion="ansiedad">
-                    <div class="emotion-icon"><i class="fas fa-heartbeat"></i></div>
-                    <p>Ansiedad</p>
-                </div>
-                <div class="emotion-option" data-emotion="cansancio">
-                    <div class="emotion-icon"><i class="fas fa-tired"></i></div>
-                    <p>Cansancio</p>
-                </div>
-                <div class="emotion-option" data-emotion="miedo">
-                    <div class="emotion-icon"><i class="fas fa-surprise"></i></div>
-                    <p>Miedo</p>
-                </div>
-                <div class="emotion-option" data-emotion="culpa">
-                    <div class="emotion-icon"><i class="fas fa-frown"></i></div>
-                    <p>Culpa</p>
-                </div>
-                <div class="emotion-option" data-emotion="confusion">
-                    <div class="emotion-icon"><i class="fas fa-question-circle"></i></div>
-                    <p>Confusión</p>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 30px;">
-                <button class="btn-secondary" id="continueFromEmotions">Continuar</button>
-            </div>
+    <!-- Contenido principal -->
+    <div class="main-content">
+        <!-- Navegación entre secciones -->
+        <div class="nav-container">
+            <div class="nav-btn active" data-target="welcome">1</div>
+            <div class="nav-btn" data-target="emotional-intro">2</div>
+            <div class="nav-btn" data-target="analysis">3</div>
+            <div class="nav-btn" data-target="modules">4</div>
+            <div class="nav-btn" data-target="habits">5</div>
+            <div class="nav-btn" data-target="rewards">6</div>
+            <div class="nav-btn" data-target="setback">7</div>
+            <div class="nav-btn" data-target="closing">8</div>
         </div>
-    </section>
 
-    <!-- Análisis del problema con pensamiento computacional -->
-    <section id="analysis" style="display: none;">
-        <div class="container">
-            <h2>Análisis con pensamiento computacional</h2>
-            <p>Vamos a abordar tu procrastinación como un problema que podemos descomponer y resolver sistemáticamente.</p>
-            
-            <div class="modules-container">
-                <div class="module-card">
-                    <div class="module-icon">🧩</div>
-                    <h3 class="module-title">Descomposición</h3>
-                    <p>Divide una tarea grande en partes pequeñas y manejables.</p>
-                    <div class="challenge">
-                        <h4>Tu reto:</h4>
-                        <p>Escribe la tarea que postergas y divídela en 3 pasos pequeños.</p>
-                        <input type="text" class="task-input" id="taskStep1" placeholder="Paso 1" style="margin-bottom: 10px;">
-                        <input type="text" class="task-input" id="taskStep2" placeholder="Paso 2" style="margin-bottom: 10px;">
-                        <input type="text" class="task-input" id="taskStep3" placeholder="Paso 3" style="margin-bottom: 10px;">
+        <!-- Pantalla de bienvenida -->
+        <section id="welcome">
+            <div class="container">
+                <div class="welcome-content">
+                    <div class="logo">
+                        <i class="fas fa-play-circle"></i>
                     </div>
-                </div>
-                
-                <div class="module-card">
-                    <div class="module-icon">🔁</div>
-                    <h3 class="module-title">Reconocimiento de patrones</h3>
-                    <p>Identifica cuándo y por qué sueles procrastinar.</p>
+                    <h1>Cómo dejar de procrastinar</h1>
+                    <p class="tagline">(paso a paso y sin estrés)</p>
+                    <p>Un taller práctico y vivencial diseñado para estudiantes como tú. Aquí no solo leerás consejos, sino que participarás activamente, tomarás decisiones y ejecutarás pequeños retos reales.</p>
+                    
                     <div class="challenge">
-                        <h4>Tu reto:</h4>
-                        <p>Marca las situaciones en las que sueles postergar:</p>
-                        <div class="checkbox-list">
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="pattern1" value="tarde-noche">
-                                <label for="pattern1">En la tarde/noche</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="pattern2" value="cansado">
-                                <label for="pattern2">Cuando estoy cansado</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="pattern3" value="sol">
-                                <label for="pattern3">Cuando estoy solo</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="pattern4" value="telefono">
-                                <label for="pattern4">Cuando tengo el teléfono cerca</label>
-                            </div>
-                        </div>
+                        <h4>Reflexión inicial</h4>
+                        <p>Para personalizar tu experiencia, responde:</p>
                     </div>
-                </div>
-                
-                <div class="module-card">
-                    <div class="module-icon">🎯</div>
-                    <h3 class="module-title">Abstracción</h3>
-                    <p>Identifica la causa principal detrás de tu procrastinación.</p>
-                    <div class="challenge">
-                        <h4>Tu reto:</h4>
-                        <p>Selecciona la causa que más se acerca a tu situación:</p>
-                        <select id="mainCause" class="task-input" style="margin-bottom: 0;">
-                            <option value="">Selecciona una opción</option>
-                            <option value="miedo">Miedo a no hacerlo perfecto</option>
-                            <option value="aburrimiento">La tarea me parece aburrida</option>
-                            <option value="saturacion">Me siento saturado o abrumado</option>
-                            <option value="claridad">No sé por dónde empezar</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="module-card">
-                    <div class="module-icon">🧠</div>
-                    <h3 class="module-title">Algoritmo / Plan de acción</h3>
-                    <p>Crea un plan simple para empezar hoy mismo.</p>
-                    <div class="challenge">
-                        <h4>Tu reto:</h4>
-                        <p>Ordena estos pasos lógicos para vencer la procrastinación:</p>
-                        <div class="drag-drop-container">
-                            <div class="drag-item" draggable="true" data-step="1">Identificar la tarea más pequeña posible</div>
-                            <div class="drag-item" draggable="true" data-step="2">Eliminar distracciones principales</div>
-                            <div class="drag-item" draggable="true" data-step="3">Poner un temporizador de 5 minutos</div>
-                            <div class="drag-item" draggable="true" data-step="4">Comenzar sin esperar motivación</div>
-                        </div>
-                        <div class="drop-zone" id="dropZone">
-                            <p>Arrastra los pasos aquí en el orden correcto</p>
-                        </div>
-                    </div>
+                    
+                    <p><strong>¿Qué es lo que más sueles postergar?</strong></p>
+                    <input type="text" class="task-input" id="procrastinatedTask" placeholder="Ej: Estudiar para el examen de matemáticas, hacer la tarea de historia...">
+                    
+                    <button class="btn-primary" id="startBtn">Empezar mi proceso</button>
                 </div>
             </div>
-            
-            <div style="text-align: center; margin-top: 30px;">
-                <button class="btn-secondary" id="continueFromAnalysis">Continuar a los módulos</button>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Módulos interactivos -->
-    <section id="modules" style="display: none;">
-        <div class="container">
-            <h2>Módulos interactivos</h2>
-            <p>Ahora practica con ejercicios específicos para superar la procrastinación.</p>
-            
-            <div class="modules-container">
-                <div class="module-card">
-                    <div class="module-icon"><i class="fas fa-clipboard-check"></i></div>
-                    <h3 class="module-title">Regla de los 5 minutos</h3>
-                    <p>Comprométete a trabajar solo 5 minutos. Generalmente, una vez que empiezas, continúas.</p>
-                    <div class="challenge">
-                        <h4>Tu reto:</h4>
-                        <p>Usa el temporizador para trabajar en tu tarea por 5 minutos.</p>
-                        <div class="timer" id="timerDisplay">05:00</div>
-                        <div class="timer-controls">
-                            <button class="btn-small" id="startTimer">Comenzar</button>
-                            <button class="btn-small" id="pauseTimer">Pausar</button>
-                            <button class="btn-small" id="resetTimer">Reiniciar</button>
-                        </div>
+        <!-- Introducción emocional guiada -->
+        <section id="emotional-intro" style="display: none;">
+            <div class="container">
+                <h2>Entendiendo la procrastinación</h2>
+                <p>La procrastinación no es un defecto de personalidad, sino un <strong>comportamiento emocional</strong>. Entender cómo te sientes es el primer paso para cambiar.</p>
+                
+                <div class="message info">
+                    <p><strong>Recuerda esto:</strong> Procrastinar no significa que seas flojo. Generalmente es una respuesta a emociones como el miedo al fracaso, la ansiedad o la falta de claridad.</p>
+                </div>
+                
+                <p><strong>Selecciona cómo te sientes cuando procrastinas:</strong></p>
+                
+                <div class="emotion-options">
+                    <div class="emotion-option" data-emotion="ansiedad">
+                        <div class="emotion-icon"><i class="fas fa-heartbeat"></i></div>
+                        <p>Ansiedad</p>
                     </div>
-                </div>
-                
-                <div class="module-card">
-                    <div class="module-icon"><i class="fas fa-ban"></i></div>
-                    <h3 class="module-title">Elimina distracciones</h3>
-                    <p>Identifica y elimina las distracciones principales de tu entorno.</p>
-                    <div class="challenge">
-                        <h4>Tu reto:</h4>
-                        <p>Marca las distracciones que puedes eliminar ahora:</p>
-                        <div class="checkbox-list">
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="distraction1" value="telefono">
-                                <label for="distraction1">Teléfono en silencio o en otra habitación</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="distraction2" value="redes">
-                                <label for="distraction2">Cerrar pestañas de redes sociales</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="distraction3" value="notificaciones">
-                                <label for="distraction3">Desactivar notificaciones</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="distraction4" value="lugar">
-                                <label for="distraction4">Buscar un lugar tranquilo</label>
-                            </div>
-                        </div>
+                    <div class="emotion-option" data-emotion="cansancio">
+                        <div class="emotion-icon"><i class="fas fa-tired"></i></div>
+                        <p>Cansancio</p>
                     </div>
-                </div>
-                
-                <div class="module-card">
-                    <div class="module-icon"><i class="fas fa-bullseye"></i></div>
-                    <h3 class="module-title">Objetivos claros</h3>
-                    <p>Un objetivo vago genera procrastinación. Convierte "estudiar" en "leer 10 páginas del capítulo 3".</p>
-                    <div class="challenge">
-                        <h4>Tu reto:</h4>
-                        <p>Convierte este objetivo vago en uno específico:</p>
-                        <p><strong>Objetivo vago:</strong> "Estudiar para el examen"</p>
-                        <input type="text" class="task-input" id="specificGoal" placeholder="Ej: Repasar los ejercicios 1 al 5 de la página 45">
-                        <button class="btn-small" id="saveGoal" style="margin-top: 10px;">Guardar objetivo</button>
+                    <div class="emotion-option" data-emotion="miedo">
+                        <div class="emotion-icon"><i class="fas fa-surprise"></i></div>
+                        <p>Miedo</p>
                     </div>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 30px;">
-                <button class="btn-secondary" id="continueFromModules">Continuar al sistema de hábitos</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sistema de hábitos -->
-    <section id="habits" style="display: none;">
-        <div class="container">
-            <h2>Sistema de hábitos</h2>
-            <p>La constancia es más importante que la motivación. Selecciona un mini-reto para hoy.</p>
-            
-            <div class="message info">
-                <p><strong>Mensaje clave:</strong> "No busques motivación, construye constancia"</p>
-            </div>
-            
-            <div class="habits-container">
-                <div class="habit-card" data-habit="5min">
-                    <h3>Regla de 5 minutos</h3>
-                    <p>Aplica la regla de 5 minutos a una tarea pendiente hoy.</p>
-                    <p><small>Tiempo estimado: 5 min</small></p>
-                </div>
-                
-                <div class="habit-card" data-habit="descomponer">
-                    <h3>Descomponer 1 tarea</h3>
-                    <p>Toma una tarea grande y divídela en 3 pasos pequeños.</p>
-                    <p><small>Tiempo estimado: 3 min</small></p>
-                </div>
-                
-                <div class="habit-card" data-habit="entorno">
-                    <h3>Prepara tu entorno</h3>
-                    <p>Elimina 3 distracciones de tu espacio de trabajo.</p>
-                    <p><small>Tiempo estimado: 10 min</small></p>
-                </div>
-                
-                <div class="habit-card" data-habit="reflexion">
-                    <h3>Reflexión estoica</h3>
-                    <p>Reflexiona: ¿Qué es lo peor que puede pasar si empiezo ahora?</p>
-                    <p><small>Tiempo estimado: 3 min</small></p>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 30px;">
-                <button class="btn-secondary" id="continueFromHabits">Continuar</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Recompensas y seguimiento -->
-    <section id="rewards" style="display: none;">
-        <div class="container">
-            <h2>Recompensas y seguimiento</h2>
-            <p>Celebra tus avances y haz un seguimiento de tu progreso.</p>
-            
-            <div class="progress-container">
-                <h3>Tu progreso en el taller</h3>
-                <div class="progress-bar">
-                    <div class="progress-fill" id="progressFill"></div>
-                </div>
-                <p id="progressText">Has completado el 0% del taller</p>
-            </div>
-            
-            <h3 style="margin-top: 40px;">Insignias obtenidas</h3>
-            <div class="badges-container">
-                <div class="badge" id="badge1">
-                    <i class="fas fa-play-circle"></i>
-                </div>
-                <div class="badge" id="badge2">
-                    <i class="fas fa-brain"></i>
-                </div>
-                <div class="badge" id="badge3">
-                    <i class="fas fa-trophy"></i>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 30px;">
-                <button class="btn-secondary" id="continueFromRewards">Continuar</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Cuando vuelves a procrastinar -->
-    <section id="setback" style="display: none;">
-        <div class="container">
-            <h2>Cuando vuelves a procrastinar</h2>
-            
-            <div class="message info">
-                <p><strong>Mensaje empático:</strong> "No fallaste, estás aprendiendo. La procrastinación es un hábito que se desaprende con práctica."</p>
-            </div>
-            
-            <p>Es normal tener retrocesos. Lo importante es aprender de ellos y reajustar tu estrategia.</p>
-            
-            <div class="challenge">
-                <h4>Ejercicio de reajuste</h4>
-                <p><strong>1. ¿Qué funcionó en tu intento anterior?</strong></p>
-                <input type="text" class="task-input" id="whatWorked" placeholder="Ej: La regla de 5 minutos me ayudó a empezar">
-                
-                <p style="margin-top: 20px;"><strong>2. ¿Qué puedes ajustar para la próxima vez?</strong></p>
-                <input type="text" class="task-input" id="whatAdjust" placeholder="Ej: Necesito hacerlo en la mañana cuando tengo más energía">
-            </div>
-            
-            <div style="text-align: center; margin-top: 30px;">
-                <button class="btn-secondary" id="continueFromSetback">Continuar al cierre</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Cierre reflexivo -->
-    <section id="closing" style="display: none;">
-        <div class="container">
-            <div class="welcome-content" style="max-width: 800px;">
-                <div class="logo">
-                    <i class="fas fa-flag-checkered"></i>
-                </div>
-                <h1>Has completado el taller</h1>
-                <p>Recuerda que el cambio no sucede de la noche a la mañana. Cada pequeño paso cuenta y cada intento te acerca a dominar tu tiempo y tus acciones.</p>
-                
-                <div class="message success">
-                    <p><strong>Principio estoico aplicado:</strong> "No tienes control sobre todo lo que te pasa, pero sí sobre cómo respondes. La procrastinación es una respuesta; puedes entrenar una nueva."</p>
-                </div>
-                
-                <p>La autonomía, la reflexión y la acción consciente son tus herramientas más poderosas. Este taller es solo el comienzo de tu camino hacia una relación más saludable con tus responsibilidades.</p>
-                
-                <div class="challenge">
-                    <h4>Pregunta final de reflexión</h4>
-                    <p><strong>¿Qué pequeño paso vas a dar hoy?</strong></p>
-                    <input type="text" class="task-input" id="finalStep" placeholder="Describe el pequeño paso que darás hoy">
+                    <div class="emotion-option" data-emotion="culpa">
+                        <div class="emotion-icon"><i class="fas fa-frown"></i></div>
+                        <p>Culpa</p>
+                    </div>
+                    <div class="emotion-option" data-emotion="confusion">
+                        <div class="emotion-icon"><i class="fas fa-question-circle"></i></div>
+                        <p>Confusión</p>
+                    </div>
                 </div>
                 
                 <div style="text-align: center; margin-top: 30px;">
-                    <button class="btn-primary" id="finishBtn">Guardar mi compromiso</button>
-                    <p style="margin-top: 15px; font-size: 0.9rem; color: var(--gray);">Puedes volver a visitar este taller cuando lo necesites</p>
+                    <button class="btn-secondary" id="continueFromEmotions">Continuar</button>
                 </div>
             </div>
+        </section>
+
+        <!-- Análisis del problema con pensamiento computacional -->
+        <section id="analysis" style="display: none;">
+            <div class="container">
+                <h2>Análisis con pensamiento computacional</h2>
+                <p>Vamos a abordar tu procrastinación como un problema que podemos descomponer y resolver sistemáticamente.</p>
+                
+                <div class="modules-container">
+                    <div class="module-card">
+                        <div class="module-icon">🧩</div>
+                        <h3 class="module-title">Descomposición</h3>
+                        <p>Divide una tarea grande en partes pequeñas y manejables.</p>
+                        <div class="challenge">
+                            <h4>Tu reto:</h4>
+                            <p>Escribe la tarea que postergas y divídela en 3 pasos pequeños.</p>
+                            <input type="text" class="task-input" id="taskStep1" placeholder="Paso 1" style="margin-bottom: 10px;">
+                            <input type="text" class="task-input" id="taskStep2" placeholder="Paso 2" style="margin-bottom: 10px;">
+                            <input type="text" class="task-input" id="taskStep3" placeholder="Paso 3" style="margin-bottom: 10px;">
+                        </div>
+                    </div>
+                    
+                    <div class="module-card">
+                        <div class="module-icon">🔁</div>
+                        <h3 class="module-title">Reconocimiento de patrones</h3>
+                        <p>Identifica cuándo y por qué sueles procrastinar.</p>
+                        <div class="challenge">
+                            <h4>Tu reto:</h4>
+                            <p>Marca las situaciones en las que sueles postergar:</p>
+                            <div class="checkbox-list">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="pattern1" value="tarde-noche">
+                                    <label for="pattern1">En la tarde/noche</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="pattern2" value="cansado">
+                                    <label for="pattern2">Cuando estoy cansado</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="pattern3" value="sol">
+                                    <label for="pattern3">Cuando estoy solo</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="pattern4" value="telefono">
+                                    <label for="pattern4">Cuando tengo el teléfono cerca</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="module-card">
+                        <div class="module-icon">🎯</div>
+                        <h3 class="module-title">Abstracción</h3>
+                        <p>Identifica la causa principal detrás de tu procrastinación.</p>
+                        <div class="challenge">
+                            <h4>Tu reto:</h4>
+                            <p>Selecciona la causa que más se acerca a tu situación:</p>
+                            <select id="mainCause" class="task-input" style="margin-bottom: 0;">
+                                <option value="">Selecciona una opción</option>
+                                <option value="miedo">Miedo a no hacerlo perfecto</option>
+                                <option value="aburrimiento">La tarea me parece aburrida</option>
+                                <option value="saturacion">Me siento saturado o abrumado</option>
+                                <option value="claridad">No sé por dónde empezar</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="module-card">
+                        <div class="module-icon">🧠</div>
+                        <h3 class="module-title">Algoritmo / Plan de acción</h3>
+                        <p>Crea un plan simple para empezar hoy mismo.</p>
+                        <div class="challenge">
+                            <h4>Tu reto:</h4>
+                            <p>Ordena estos pasos lógicos para vencer la procrastinación:</p>
+                            <div class="drag-drop-container">
+                                <div class="drag-item" draggable="true" data-step="1">Identificar la tarea más pequeña posible</div>
+                                <div class="drag-item" draggable="true" data-step="2">Eliminar distracciones principales</div>
+                                <div class="drag-item" draggable="true" data-step="3">Poner un temporizador de 5 minutos</div>
+                                <div class="drag-item" draggable="true" data-step="4">Comenzar sin esperar motivación</div>
+                            </div>
+                            <div class="drop-zone" id="dropZone">
+                                <p>Arrastra los pasos aquí en el orden correcto</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <button class="btn-secondary" id="continueFromAnalysis">Continuar a los módulos</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Módulos interactivos -->
+        <section id="modules" style="display: none;">
+            <div class="container">
+                <h2>Módulos interactivos</h2>
+                <p>Ahora practica con ejercicios específicos para superar la procrastinación.</p>
+                
+                <div class="modules-container">
+                    <div class="module-card">
+                        <div class="module-icon"><i class="fas fa-clipboard-check"></i></div>
+                        <h3 class="module-title">Regla de los 5 minutos</h3>
+                        <p>Comprométete a trabajar solo 5 minutos. Generalmente, una vez que empiezas, continúas.</p>
+                        <div class="challenge">
+                            <h4>Tu reto:</h4>
+                            <p>Usa el temporizador para trabajar en tu tarea por 5 minutos.</p>
+                            <div class="timer" id="timerDisplay">05:00</div>
+                            <div class="timer-controls">
+                                <button class="btn-small" id="startTimer">Comenzar</button>
+                                <button class="btn-small" id="pauseTimer">Pausar</button>
+                                <button class="btn-small" id="resetTimer">Reiniciar</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="module-card">
+                        <div class="module-icon"><i class="fas fa-ban"></i></div>
+                        <h3 class="module-title">Elimina distracciones</h3>
+                        <p>Identifica y elimina las distracciones principales de tu entorno.</p>
+                        <div class="challenge">
+                            <h4>Tu reto:</h4>
+                            <p>Marca las distracciones que puedes eliminar ahora:</p>
+                            <div class="checkbox-list">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="distraction1" value="telefono">
+                                    <label for="distraction1">Teléfono en silencio o en otra habitación</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="distraction2" value="redes">
+                                    <label for="distraction2">Cerrar pestañas de redes sociales</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="distraction3" value="notificaciones">
+                                    <label for="distraction3">Desactivar notificaciones</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="distraction4" value="lugar">
+                                    <label for="distraction4">Buscar un lugar tranquilo</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="module-card">
+                        <div class="module-icon"><i class="fas fa-bullseye"></i></div>
+                        <h3 class="module-title">Objetivos claros</h3>
+                        <p>Un objetivo vago genera procrastinación. Convierte "estudiar" en "leer 10 páginas del capítulo 3".</p>
+                        <div class="challenge">
+                            <h4>Tu reto:</h4>
+                            <p>Convierte este objetivo vago en uno específico:</p>
+                            <p><strong>Objetivo vago:</strong> "Estudiar para el examen"</p>
+                            <input type="text" class="task-input" id="specificGoal" placeholder="Ej: Repasar los ejercicios 1 al 5 de la página 45">
+                            <button class="btn-small" id="saveGoal" style="margin-top: 10px;">Guardar objetivo</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <button class="btn-secondary" id="continueFromModules">Continuar al sistema de hábitos</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sistema de hábitos -->
+        <section id="habits" style="display: none;">
+            <div class="container">
+                <h2>Sistema de hábitos</h2>
+                <p>La constancia es más importante que la motivación. Selecciona un mini-reto para hoy.</p>
+                
+                <div class="message info">
+                    <p><strong>Mensaje clave:</strong> "No busques motivación, construye constancia"</p>
+                </div>
+                
+                <div class="habits-container">
+                    <div class="habit-card" data-habit="5min">
+                        <h3>Regla de 5 minutos</h3>
+                        <p>Aplica la regla de 5 minutos a una tarea pendiente hoy.</p>
+                        <p><small>Tiempo estimado: 5 min</small></p>
+                    </div>
+                    
+                    <div class="habit-card" data-habit="descomponer">
+                        <h3>Descomponer 1 tarea</h3>
+                        <p>Toma una tarea grande y divídela en 3 pasos pequeños.</p>
+                        <p><small>Tiempo estimado: 3 min</small></p>
+                    </div>
+                    
+                    <div class="habit-card" data-habit="entorno">
+                        <h3>Prepara tu entorno</h3>
+                        <p>Elimina 3 distracciones de tu espacio de trabajo.</p>
+                        <p><small>Tiempo estimado: 10 min</small></p>
+                    </div>
+                    
+                    <div class="habit-card" data-habit="reflexion">
+                        <h3>Reflexión estoica</h3>
+                        <p>Reflexiona: ¿Qué es lo peor que puede pasar si empiezo ahora?</p>
+                        <p><small>Tiempo estimado: 3 min</small></p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <button class="btn-secondary" id="continueFromHabits">Continuar</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recompensas y seguimiento -->
+        <section id="rewards" style="display: none;">
+            <div class="container">
+                <h2>Recompensas y seguimiento</h2>
+                <p>Celebra tus avances y haz un seguimiento de tu progreso.</p>
+                
+                <div class="progress-container">
+                    <h3>Tu progreso en el taller</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <p id="progressText">Has completado el 0% del taller</p>
+                </div>
+                
+                <h3 style="margin-top: 40px;">Insignias obtenidas</h3>
+                <div class="badges-container">
+                    <div class="badge" id="badge1">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                    <div class="badge" id="badge2">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="badge" id="badge3">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <button class="btn-secondary" id="continueFromRewards">Continuar</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cuando vuelves a procrastinar -->
+        <section id="setback" style="display: none;">
+            <div class="container">
+                <h2>Cuando vuelves a procrastinar</h2>
+                
+                <div class="message info">
+                    <p><strong>Mensaje empático:</strong> "No fallaste, estás aprendiendo. La procrastinación es un hábito que se desaprende con práctica."</p>
+                </div>
+                
+                <p>Es normal tener retrocesos. Lo importante es aprender de ellos y reajustar tu estrategia.</p>
+                
+                <div class="challenge">
+                    <h4>Ejercicio de reajuste</h4>
+                    <p><strong>1. ¿Qué funcionó en tu intento anterior?</strong></p>
+                    <input type="text" class="task-input" id="whatWorked" placeholder="Ej: La regla de 5 minutos me ayudó a empezar">
+                    
+                    <p style="margin-top: 20px;"><strong>2. ¿Qué puedes ajustar para la próxima vez?</strong></p>
+                    <input type="text" class="task-input" id="whatAdjust" placeholder="Ej: Necesito hacerlo en la mañana cuando tengo más energía">
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <button class="btn-secondary" id="continueFromSetback">Continuar al cierre</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cierre reflexivo -->
+        <section id="closing" style="display: none;">
+            <div class="container">
+                <div class="welcome-content" style="max-width: 800px;">
+                    <div class="logo">
+                        <i class="fas fa-flag-checkered"></i>
+                    </div>
+                    <h1>Has completado el taller</h1>
+                    <p>Recuerda que el cambio no sucede de la noche a la mañana. Cada pequeño paso cuenta y cada intento te acerca a dominar tu tiempo y tus acciones.</p>
+                    
+                    <div class="message success">
+                        <p><strong>Principio estoico aplicado:</strong> "No tienes control sobre todo lo que te pasa, pero sí sobre cómo respondes. La procrastinación es una respuesta; puedes entrenar una nueva."</p>
+                    </div>
+                    
+                    <p>La autonomía, la reflexión y la acción consciente son tus herramientas más poderosas. Este taller es solo el comienzo de tu camino hacia una relación más saludable con tus responsibilidades.</p>
+                    
+                    <div class="challenge">
+                        <h4>Pregunta final de reflexión</h4>
+                        <p><strong>¿Qué pequeño paso vas a dar hoy?</strong></p>
+                        <input type="text" class="task-input" id="finalStep" placeholder="Describe el pequeño paso que darás hoy">
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button class="btn-primary" id="finishBtn">Guardar mi compromiso</button>
+                        <p style="margin-top: 15px; font-size: 0.9rem; color: var(--gray);">Puedes volver a visitar este taller cuando lo necesites</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="container">
+            <p>Edwin</p>
         </div>
-    </section>
+    </footer>
 
     <script>
         // Variables globales
